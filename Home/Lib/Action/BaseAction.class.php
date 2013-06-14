@@ -70,6 +70,18 @@ class BaseAction extends Action {
 	}
 	
 	
+	/**
+	 * 验证当前操作数据，是否为当前公司的数据
+	 * $app APP_id
+	 */
+	protected function check_power ($app) {
+		$app_id = $this->oUser->app_id;	//公司id
+		if ($app != $app_id) {
+			$this->error('非法操作');
+		} 
+	}
+	
+	
 }
 
 ?>

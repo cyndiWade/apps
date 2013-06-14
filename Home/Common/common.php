@@ -117,7 +117,11 @@ function setSql($_str) {
 }
 
 
-
+function setTime(&$all) {
+	foreach ($all AS $key=>$val) {
+		$all[$key]['time'] = date('Y-m-d H:i:s',$val['time']);
+	}
+}
 
 
 ?>

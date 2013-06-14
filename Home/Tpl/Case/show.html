@@ -61,37 +61,24 @@
                                         <thead>
                                           <tr>
                                             <th>序号</th>
-                                            <th>员工姓名</th>
-                                            <th>账号名</th>
-                                            <th>描述</th>
-                                            <th>是否在职</th>
+                                            <th>案例名称</th>
+                                            <th>案例说明</th>
+                                            <th>创建时间</th>
                                             <th>操作</th>
                                           </tr>
                                         </thead>
                                         <tbody>
-                                        <volist name="UserLis" id="vo" key="i">
+                                        <volist name="all" id="vo" key="i">
                                           <tr>
                                             <td>{$i}</td>
-                                            <td>{$vo.nickname}</td>
-                                            <td><p class="text05">{$vo.account}</p></td>
-                                            <td><p class="text05">	{$vo.remark}</p></td>
-                                            <td><p class="text06">                    	
-												<if condition="$vo.status eq 1 "> 在职										
-												<else /> <span style="color:red;">离职</span>								
-												</if>
-												</p>
-											</td>
+                                            <td>{$vo.title}</td>
+                                            <td><p class="text05">{$vo.info}</p></td>
+                                            <td><p class="text05">	{$vo.time}</p></td>
+    
 											<td>
                                                 <div class="controls center">
-                                                	<a href="?s=/User/userDetailed/{$vo.id}" title="详细信息" class="tip"><span class="icon12  icomoon-icon-user-3"></span></a>
-                                                    <a href="?s=/User/updateUser/{$vo.id}" title="编辑" class="tip"><span class="icon12 icomoon-icon-pencil"></span></a>
-                                                    
-													<if condition="$vo.status eq 1 ">
-														<a href="?s=/User/deleteUser/{$vo.id}/0/leave" title="离职" class="tip" ><span class="icon12 icomoon-icon-smiley"></span></a>								
-													<else /> 
-														<a href="?s=/User/deleteUser/{$vo.id}/1/leave" title="恢复" class="tip" ><span class="icon12 icomoon-icon-sad-2"></span></a>							
-													</if>
-													<a href="?s=/User/deleteUser/{$vo.id}/1/delete" title="删除" class="tip" onclick="return confirm('删除后无法恢复，确定要删除吗？') ? true : false"><span class="icon12 icomoon-icon-remove"></span></a>			
+                                                    <a href="?s=/Case/edit/cid/{$vo.id}" title="编辑" class="tip"><span class="icon12 icomoon-icon-pencil"></span></a>                                 
+													<a href="?s=/Case/del/cid/{$vo.id}" title="删除" class="tip" onclick="return confirm('删除后无法恢复，确定要删除吗？') ? true : false"><span class="icon12 icomoon-icon-remove"></span></a>			
                                                 </div>
                                             </td>
                                           </tr>
