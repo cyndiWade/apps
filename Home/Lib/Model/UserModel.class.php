@@ -15,6 +15,11 @@ class UserModel extends BaseModel {
 		return empty($data) ? null : (object) $data;
 	}
 	
+	protected function _after_select(&$resultSet,$options) {
+		foreach ($resultSet as &$value) {
+			$value['create_time'] = date('y-m-d H:i', $value['create_time']);
+		}
+	}
 }
 
 
