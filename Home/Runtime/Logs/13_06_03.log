@@ -1,0 +1,134 @@
+[ 2013-06-03T15:28:58+08:00 ] 27.115.29.132 /oa/index.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.024369s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.024452s ]
+NOTIC: [8] Undefined index:  authId D:\freehost\cyndi1991\web\OA\Home\Lib\ORG\Util\RBAC.class.php 第 177 行.
+SQL: select node.id,node.name from oa_role as role,oa_role_user as user,oa_access as access ,oa_node as node where user.user_id='' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=1 and node.status=1 [ RunTime:0.040373s ]
+NOTIC: [8] Undefined index:  authId D:\freehost\cyndi1991\web\OA\Home\Lib\Action\CommonAction.class.php 第 12 行.
+
+[ 2013-06-03T15:28:58+08:00 ] 27.115.29.132 /oa/index.php?s=/Public/login
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.020687s ]
+INFO: [ route_check ] --END-- [ RunTime:0.020756s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000882s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000938s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.020684s ]
+INFO: [ view_template ] --END-- [ RunTime:0.020747s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.065681s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.065755s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.016746s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.011475s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.001034s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.007743s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.037199s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.034622s ]
+INFO: [ view_end ] --END-- [ RunTime:0.034675s ]
+
+[ 2013-06-03T15:29:25+08:00 ] 27.115.29.132 /oa/index.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000901s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000980s ]
+NOTIC: [8] Undefined index:  authId D:\freehost\cyndi1991\web\OA\Home\Lib\ORG\Util\RBAC.class.php 第 177 行.
+SQL: select node.id,node.name from oa_role as role,oa_role_user as user,oa_access as access ,oa_node as node where user.user_id='' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=1 and node.status=1 [ RunTime:0.000069s ]
+NOTIC: [8] Undefined index:  authId D:\freehost\cyndi1991\web\OA\Home\Lib\Action\CommonAction.class.php 第 12 行.
+
+[ 2013-06-03T15:29:26+08:00 ] 27.115.29.132 /oa/index.php?s=/Public/login
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001204s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001271s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000887s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000945s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001093s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001153s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.010222s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010290s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000724s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000716s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000616s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000814s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003020s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000934s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000985s ]
+
+[ 2013-06-03T15:29:33+08:00 ] 27.115.29.132 /oa/index.php?s=/Public/checkLogin
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001180s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001253s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000883s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000941s ]
+SQL: SHOW COLUMNS FROM `oa_user` [ RunTime:0.018226s ]
+SQL: SELECT * FROM `oa_user` WHERE ( `account` = 'admin' ) AND ( `status` > 0 ) LIMIT 1   [ RunTime:0.000542s ]
+SQL: UPDATE `oa_user` SET `last_login_time`=1370244573,`login_count`=login_count+1,`last_login_ip`='27.115.29.132' WHERE ( `id` = 7 ) [ RunTime:0.000152s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001074s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001134s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.022166s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022234s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000711s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000720s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000612s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000794s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002989s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000947s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000999s ]
+
+[ 2013-06-03T15:29:34+08:00 ] 27.115.29.132 /oa/index.php?s=/Content/tables
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001181s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001256s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000882s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000939s ]
+NOTIC: [8] Undefined offset:  2 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 7 行.
+SQL: SELECT u.id,u.nickname,c.am,c.pm,c.cid FROM oa_user AS u LEFT JOIN oa_content AS c ON c.uid=u.id  AND c.create_time='2013-06-03' WHERE ( u.is_admin = 0 ) AND ( u.status = 1 )  [ RunTime:0.030738s ]
+SQL: SELECT u.id,t.spend,t.content,p.pname FROM oa_time AS t LEFT JOIN oa_user AS u ON t.uid = u.id LEFT JOIN oa_project AS p ON p.pid = t.pid WHERE ( t.create_time = '2013-06-03' )  [ RunTime:0.013421s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001281s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001341s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.077793s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.077856s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000898s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000736s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000624s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000862s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003278s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000942s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000994s ]
+

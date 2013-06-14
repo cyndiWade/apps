@@ -1,0 +1,1272 @@
+[ 2013-05-24T09:09:51+08:00 ] 101.69.163.217 /oa/index.php?s=/Public/login
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.029001s ]
+INFO: [ route_check ] --END-- [ RunTime:0.029076s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.003017s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003076s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.012725s ]
+INFO: [ view_template ] --END-- [ RunTime:0.012788s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.065258s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.065334s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.016808s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.011463s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.001081s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.007690s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.037199s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.009464s ]
+INFO: [ view_end ] --END-- [ RunTime:0.009517s ]
+
+[ 2013-05-24T09:10:00+08:00 ] 101.69.163.217 /oa/index.php?s=/Public/checkLogin
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001174s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001244s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000878s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000935s ]
+SQL: SHOW COLUMNS FROM `oa_user` [ RunTime:0.001039s ]
+SQL: SELECT * FROM `oa_user` WHERE ( `account` = 'admin' ) AND ( `status` > 0 ) LIMIT 1   [ RunTime:0.000239s ]
+SQL: UPDATE `oa_user` SET `last_login_time`=1369357800,`login_count`=login_count+1,`last_login_ip`='101.69.163.217' WHERE ( `id` = 7 ) [ RunTime:0.000198s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001082s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001144s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.013697s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013773s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000715s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000711s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000605s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000786s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002969s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000934s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000985s ]
+
+[ 2013-05-24T09:10:01+08:00 ] 101.69.163.217 /oa/index.php?s=/Content/tables
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001174s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001245s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000881s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000940s ]
+NOTIC: [8] Undefined offset:  2 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 7 行.
+SQL: SELECT u.id,u.nickname,c.am,c.pm,c.cid FROM oa_user AS u LEFT JOIN oa_content AS c ON c.uid=u.id  AND c.create_time='2013-05-24' WHERE ( u.is_admin = 0 ) AND ( u.status = 1 )  [ RunTime:0.003349s ]
+SQL: SELECT u.id,t.spend,t.content,p.pname FROM oa_time AS t LEFT JOIN oa_user AS u ON t.uid = u.id LEFT JOIN oa_project AS p ON p.pid = t.pid WHERE ( t.create_time = '2013-05-24' )  [ RunTime:0.000499s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001213s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001273s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.179657s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.179719s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000898s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000735s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000603s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000834s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003219s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000940s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000991s ]
+
+[ 2013-05-24T09:11:03+08:00 ] 101.69.163.217 /oa/index.php?s=/Content/select_data
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001167s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001238s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000882s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000934s ]
+SQL: SELECT p.pname,p.pid FROM oa_project_user as u LEFT JOIN oa_project as p on u.pid=p.pid WHERE ( u.uid = '1' )  [ RunTime:0.000316s ]
+
+[ 2013-05-24T09:11:03+08:00 ] 101.69.163.217 /oa/index.php?s=/Content/select_data
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001176s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001246s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000882s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000934s ]
+SQL: SELECT p.pname,p.pid FROM oa_project_user as u LEFT JOIN oa_project as p on u.pid=p.pid WHERE ( u.uid = '1' )  [ RunTime:0.000083s ]
+
+[ 2013-05-24T09:11:04+08:00 ] 101.69.163.217 /oa/index.php?s=/Content/select_data
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001167s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001236s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000878s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000930s ]
+SQL: SELECT p.pname,p.pid FROM oa_project_user as u LEFT JOIN oa_project as p on u.pid=p.pid WHERE ( u.uid = '1' )  [ RunTime:0.000084s ]
+
+[ 2013-05-24T09:11:04+08:00 ] 101.69.163.217 /oa/index.php?s=/Content/select_data
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001166s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001238s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000877s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000929s ]
+SQL: SELECT p.pname,p.pid FROM oa_project_user as u LEFT JOIN oa_project as p on u.pid=p.pid WHERE ( u.uid = '1' )  [ RunTime:0.000087s ]
+
+[ 2013-05-24T09:11:04+08:00 ] 101.69.163.217 /oa/index.php?s=/Content/select_data
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001164s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001235s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000873s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000925s ]
+SQL: SELECT p.pname,p.pid FROM oa_project_user as u LEFT JOIN oa_project as p on u.pid=p.pid WHERE ( u.uid = '1' )  [ RunTime:0.000082s ]
+
+[ 2013-05-24T09:11:04+08:00 ] 101.69.163.217 /oa/index.php?s=/Content/select_data
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001165s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001234s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000877s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000929s ]
+SQL: SELECT p.pname,p.pid FROM oa_project_user as u LEFT JOIN oa_project as p on u.pid=p.pid WHERE ( u.uid = '1' )  [ RunTime:0.000083s ]
+
+[ 2013-05-24T09:11:04+08:00 ] 101.69.163.217 /oa/index.php?s=/Content/select_data
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001165s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001236s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000875s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000928s ]
+SQL: SELECT p.pname,p.pid FROM oa_project_user as u LEFT JOIN oa_project as p on u.pid=p.pid WHERE ( u.uid = '1' )  [ RunTime:0.000083s ]
+
+[ 2013-05-24T09:11:11+08:00 ] 101.69.163.217 /oa/index.php?s=/Project/index
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001178s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001253s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000883s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000940s ]
+SQL: SELECT p.pid,p.pname,p.start_time,p.end_time,p.state,t.uid,u.nickname,t.spend FROM oa_project AS p LEFT JOIN oa_time AS t ON p.pid = t.pid LEFT JOIN oa_user AS u ON u.id=t.uid WHERE ( p.is_del = 0 ) ORDER BY p.pid ASC,u.id ASC  [ RunTime:0.007799s ]
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈泽州 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陆开韵 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陆开韵 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈泽州 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  段鹏飞 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈泽州 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈泽州 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陆开韵 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  吴瑛华 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  吴瑛华 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陆开韵 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  娄伟康 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  娄伟康 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  王磊 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陆开韵 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:   D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.009379s ]
+INFO: [ view_template ] --END-- [ RunTime:0.009468s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.041843s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041942s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001182s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000753s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000607s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000867s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003565s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000952s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001005s ]
+
+[ 2013-05-24T09:11:38+08:00 ] 101.69.163.217 /oa/index.php?s=/Project/edit/2
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001171s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001241s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000885s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000943s ]
+SQL: SHOW COLUMNS FROM `oa_project` [ RunTime:0.000950s ]
+SQL: SELECT * FROM `oa_project` WHERE ( `pid` = 2 ) LIMIT 1   [ RunTime:0.000213s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001179s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001248s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.034405s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034477s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000834s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000723s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000605s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000814s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003125s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000948s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001046s ]
+
+[ 2013-05-24T09:11:50+08:00 ] 101.69.163.217 /oa/index.php?s=/Project/save
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001169s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001240s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000882s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000939s ]
+SQL: SHOW COLUMNS FROM `oa_project` [ RunTime:0.000937s ]
+SQL: UPDATE `oa_project` SET `pname`='OA',`start_time`='2013-02-16',`end_time`='2013-03-15',`state`=2,`client`='',`budget`=0,`type`='PHP',`remarks`='为公司内部运营提供的OA系统',`reference`='',`update_time`='2013-05-24 09:11:50' WHERE ( `pid` = 2 ) [ RunTime:0.017738s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001067s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001128s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.008837s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008906s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000718s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000717s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000607s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000787s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002981s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001042s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001095s ]
+
+[ 2013-05-24T09:11:52+08:00 ] 101.69.163.217 /oa/index.php?s=/Project/index
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001168s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001239s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000885s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000942s ]
+SQL: SELECT p.pid,p.pname,p.start_time,p.end_time,p.state,t.uid,u.nickname,t.spend FROM oa_project AS p LEFT JOIN oa_time AS t ON p.pid = t.pid LEFT JOIN oa_user AS u ON u.id=t.uid WHERE ( p.is_del = 0 ) ORDER BY p.pid ASC,u.id ASC  [ RunTime:0.007442s ]
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈泽州 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陆开韵 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陆开韵 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈泽州 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  段鹏飞 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈泽州 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈泽州 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陆开韵 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  吴瑛华 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  吴瑛华 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陆开韵 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  娄伟康 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  娄伟康 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  王磊 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陆开韵 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:   D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001182s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001250s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.020455s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020526s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000920s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000749s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000608s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000854s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003281s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000944s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000994s ]
+
+[ 2013-05-24T09:11:56+08:00 ] 101.69.163.217 /oa/index.php?s=/Project/edit/3
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001227s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001309s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000885s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000942s ]
+SQL: SHOW COLUMNS FROM `oa_project` [ RunTime:0.000950s ]
+SQL: SELECT * FROM `oa_project` WHERE ( `pid` = 3 ) LIMIT 1   [ RunTime:0.000218s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001146s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001214s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.019228s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019298s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000803s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000721s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000604s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000812s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003090s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000931s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000981s ]
+
+[ 2013-05-24T09:12:02+08:00 ] 101.69.163.217 /oa/index.php?s=/Project/save
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001172s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001244s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000878s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000935s ]
+SQL: SHOW COLUMNS FROM `oa_project` [ RunTime:0.000971s ]
+SQL: UPDATE `oa_project` SET `pname`='公司HP',`start_time`='2013-01-01',`end_time`='2013-03-15',`state`=2,`client`='',`budget`=0,`type`='Design，HTML，JS',`remarks`='公司内部网站',`reference`='google搜素日本的网站公司，以对方内容为参考',`update_time`='2013-05-24 09:12:02' WHERE ( `pid` = 3 ) [ RunTime:0.021413s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001048s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001110s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.008799s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008869s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000716s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000715s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000605s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000790s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002978s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000937s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000988s ]
+
+[ 2013-05-24T09:12:03+08:00 ] 101.69.163.217 /oa/index.php?s=/Project/index
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001171s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001242s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000881s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000937s ]
+SQL: SELECT p.pid,p.pname,p.start_time,p.end_time,p.state,t.uid,u.nickname,t.spend FROM oa_project AS p LEFT JOIN oa_time AS t ON p.pid = t.pid LEFT JOIN oa_user AS u ON u.id=t.uid WHERE ( p.is_del = 0 ) ORDER BY p.pid ASC,u.id ASC  [ RunTime:0.007473s ]
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈泽州 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陆开韵 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陆开韵 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈泽州 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  段鹏飞 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈泽州 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈泽州 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陆开韵 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  吴瑛华 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  吴瑛华 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陆开韵 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  娄伟康 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  娄伟康 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  王磊 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陆开韵 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:   D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001186s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001253s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.020269s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020339s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000911s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000747s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000605s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000854s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003269s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000940s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000990s ]
+
+[ 2013-05-24T09:12:06+08:00 ] 101.69.163.217 /oa/index.php?s=/Project/edit/4
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001233s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001314s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000928s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000988s ]
+SQL: SHOW COLUMNS FROM `oa_project` [ RunTime:0.001209s ]
+SQL: SELECT * FROM `oa_project` WHERE ( `pid` = 4 ) LIMIT 1   [ RunTime:0.000281s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001174s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001246s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.019935s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020019s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000903s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000762s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000663s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000856s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003341s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000972s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001023s ]
+
+[ 2013-05-24T09:12:11+08:00 ] 101.69.163.217 /oa/index.php?s=/Project/save
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001167s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001239s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000883s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000942s ]
+SQL: SHOW COLUMNS FROM `oa_project` [ RunTime:0.000929s ]
+SQL: UPDATE `oa_project` SET `pname`='外滩',`start_time`='2013-01-01',`end_time`='2013-06-30',`state`=2,`client`='外滩画报设计酒店联盟',`budget`=40000,`type`='HTML，JS，PHP',`remarks`='外滩画报本年度初步合作，计划为网站分成评选，联盟和论坛三部分，制作浦发银行合作的ebooking平台，对酒店的信息录入管理平台',`reference`='',`update_time`='2013-05-24 09:12:11' WHERE ( `pid` = 4 ) [ RunTime:0.023041s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001062s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001123s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.008968s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009036s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000714s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000720s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000606s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000794s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002983s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000937s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000988s ]
+
+[ 2013-05-24T09:12:12+08:00 ] 101.69.163.217 /oa/index.php?s=/Project/index
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001167s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001240s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000884s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000942s ]
+SQL: SELECT p.pid,p.pname,p.start_time,p.end_time,p.state,t.uid,u.nickname,t.spend FROM oa_project AS p LEFT JOIN oa_time AS t ON p.pid = t.pid LEFT JOIN oa_user AS u ON u.id=t.uid WHERE ( p.is_del = 0 ) ORDER BY p.pid ASC,u.id ASC  [ RunTime:0.007398s ]
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈泽州 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陆开韵 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陆开韵 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈泽州 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  段鹏飞 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈泽州 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈泽州 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陆开韵 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  吴瑛华 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  吴瑛华 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陆开韵 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  娄伟康 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  娄伟康 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  王磊 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陆开韵 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:   D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001186s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001252s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.020227s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020298s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000920s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000747s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000603s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000850s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003271s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000940s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000991s ]
+
+[ 2013-05-24T09:12:38+08:00 ] 101.69.163.217 /oa/index.php?s=/Content/tables/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001174s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001244s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000880s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000939s ]
+NOTIC: [8] Undefined offset:  2 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 7 行.
+SQL: SELECT u.id,u.nickname,c.am,c.pm,c.cid FROM oa_user AS u LEFT JOIN oa_content AS c ON c.uid=u.id  AND c.create_time='2013-05-24' WHERE ( u.is_admin = 0 ) AND ( u.status = 1 )  [ RunTime:0.000088s ]
+SQL: SELECT u.id,t.spend,t.content,p.pname FROM oa_time AS t LEFT JOIN oa_user AS u ON t.uid = u.id LEFT JOIN oa_project AS p ON p.pid = t.pid WHERE ( t.create_time = '2013-05-24' )  [ RunTime:0.000571s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001160s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001219s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.021481s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021543s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000894s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000735s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000606s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000835s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003218s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000941s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000991s ]
+
+[ 2013-05-24T09:12:44+08:00 ] 101.69.163.217 /oa/index.php?s=/User/group
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001189s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001264s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000891s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000950s ]
+SQL: SHOW COLUMNS FROM `oa_role` [ RunTime:0.000801s ]
+SQL: SELECT * FROM `oa_role` WHERE ( `status` = 1 )  [ RunTime:0.000215s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.012313s ]
+INFO: [ view_template ] --END-- [ RunTime:0.012374s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.026075s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026146s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000814s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000733s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000605s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000832s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003141s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000946s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001006s ]
+
+[ 2013-05-24T09:12:47+08:00 ] 101.69.163.217 /oa/index.php?s=/User/groupUser/1
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001248s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001323s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000905s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000965s ]
+SQL: SHOW COLUMNS FROM `oa_role` [ RunTime:0.000812s ]
+SQL: SHOW COLUMNS FROM `oa_user` [ RunTime:0.000850s ]
+SQL: SHOW COLUMNS FROM `oa_role_user` [ RunTime:0.000584s ]
+NOTIC: [8] Undefined index:  send D:\freehost\cyndi1991\web\OA\Home\Lib\Action\UserAction.class.php 第 163 行.
+SQL: SELECT `name` FROM `oa_role` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000151s ]
+SQL: SELECT * FROM `oa_user` WHERE ( `is_admin` = 0 ) AND ( `status` = 1 )  [ RunTime:0.000194s ]
+SQL: SELECT * FROM oa_role_user AS r LEFT JOIN oa_user AS u ON r.user_id=u.id WHERE ( r.role_id = '1' ) AND ( u.status = 1 )  [ RunTime:0.017734s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.013568s ]
+INFO: [ view_template ] --END-- [ RunTime:0.013627s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.018870s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018942s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000805s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000719s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000604s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000807s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003082s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000927s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000977s ]
+
+[ 2013-05-24T09:12:56+08:00 ] 101.69.163.217 /oa/index.php?s=/User/user
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001171s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001242s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000885s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000942s ]
+SQL: SHOW COLUMNS FROM `oa_user` [ RunTime:0.000997s ]
+SQL: SELECT * FROM `oa_user` WHERE ( `is_admin` = 0 )  [ RunTime:0.000231s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001334s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001398s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.030182s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030252s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000892s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000739s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000604s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000825s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003209s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000931s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000980s ]
+
+[ 2013-05-24T09:13:06+08:00 ] 101.69.163.217 /oa/index.php?s=/Personal/me
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001168s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001239s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000884s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000941s ]
+SQL: SHOW COLUMNS FROM `oa_user` [ RunTime:0.000994s ]
+SQL: SELECT * FROM `oa_user` WHERE ( `id` = 7 ) LIMIT 1   [ RunTime:0.000200s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001207s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001280s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.030627s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030698s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000808s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000738s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000606s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000825s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003127s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000935s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000986s ]
+
+[ 2013-05-24T16:22:47+08:00 ] 117.184.3.198 /oa/index.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000952s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001032s ]
+NOTIC: [8] Undefined index:  authId D:\freehost\cyndi1991\web\OA\Home\Lib\ORG\Util\RBAC.class.php 第 177 行.
+SQL: select node.id,node.name from oa_role as role,oa_role_user as user,oa_access as access ,oa_node as node where user.user_id='' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=1 and node.status=1 [ RunTime:0.001274s ]
+NOTIC: [8] Undefined index:  authId D:\freehost\cyndi1991\web\OA\Home\Lib\Action\CommonAction.class.php 第 12 行.
+
+[ 2013-05-24T16:22:47+08:00 ] 117.184.3.198 /oa/index.php?s=/Public/login
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001266s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001335s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000890s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000949s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001117s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001181s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.010582s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010654s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000759s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000751s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000640s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000829s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003131s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000962s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001014s ]
+
+[ 2013-05-24T16:23:00+08:00 ] 117.184.3.198 /oa/index.php?s=/Public/checkLogin
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001180s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001254s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000883s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000941s ]
+SQL: SHOW COLUMNS FROM `oa_user` [ RunTime:0.001279s ]
+SQL: SELECT * FROM `oa_user` WHERE ( `account` = 'admin' ) AND ( `status` > 0 ) LIMIT 1   [ RunTime:0.000221s ]
+SQL: UPDATE `oa_user` SET `last_login_time`=1369383780,`login_count`=login_count+1,`last_login_ip`='117.184.3.198' WHERE ( `id` = 7 ) [ RunTime:0.000466s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001050s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001110s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.008888s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008953s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000697s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000725s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000623s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000788s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002984s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000935s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000989s ]
+
+[ 2013-05-24T16:23:01+08:00 ] 117.184.3.198 /oa/index.php?s=/Content/tables
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001170s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001237s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000882s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000939s ]
+NOTIC: [8] Undefined offset:  2 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 7 行.
+SQL: SELECT u.id,u.nickname,c.am,c.pm,c.cid FROM oa_user AS u LEFT JOIN oa_content AS c ON c.uid=u.id  AND c.create_time='2013-05-24' WHERE ( u.is_admin = 0 ) AND ( u.status = 1 )  [ RunTime:0.015123s ]
+SQL: SELECT u.id,t.spend,t.content,p.pname FROM oa_time AS t LEFT JOIN oa_user AS u ON t.uid = u.id LEFT JOIN oa_project AS p ON p.pid = t.pid WHERE ( t.create_time = '2013-05-24' )  [ RunTime:0.000788s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001208s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001268s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.021690s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021751s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000897s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000736s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000605s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000834s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003222s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001063s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001119s ]
+
+[ 2013-05-24T16:23:37+08:00 ] 117.184.3.198 /oa/index.php?s=/Project/index
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001175s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001249s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000890s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000951s ]
+SQL: SELECT p.pid,p.pname,p.start_time,p.end_time,p.state,t.uid,u.nickname,t.spend FROM oa_project AS p LEFT JOIN oa_time AS t ON p.pid = t.pid LEFT JOIN oa_user AS u ON u.id=t.uid WHERE ( p.is_del = 0 ) ORDER BY p.pid ASC,u.id ASC  [ RunTime:0.007534s ]
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈泽州 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陆开韵 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陆开韵 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈泽州 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  段鹏飞 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈泽州 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈泽州 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陆开韵 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  吴瑛华 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  翁天萌 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  吴瑛华 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陆开韵 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  娄伟康 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  高卡妮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  娄伟康 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  王磊 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陈晓青 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  陆开韵 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  张炜林 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  严慧亮 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  lillian D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:  time D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+NOTIC: [8] Undefined index:   D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ProjectAction.class.php 第 20 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001288s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001363s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.020468s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020540s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000929s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000779s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000609s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000864s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003334s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000943s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000994s ]
+
+[ 2013-05-24T16:37:05+08:00 ] 117.184.3.198 /oa/index.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000903s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000979s ]
+NOTIC: [8] Undefined index:  authId D:\freehost\cyndi1991\web\OA\Home\Lib\ORG\Util\RBAC.class.php 第 177 行.
+SQL: select node.id,node.name from oa_role as role,oa_role_user as user,oa_access as access ,oa_node as node where user.user_id='' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=1 and node.status=1 [ RunTime:0.000087s ]
+NOTIC: [8] Undefined index:  authId D:\freehost\cyndi1991\web\OA\Home\Lib\Action\CommonAction.class.php 第 12 行.
+
+[ 2013-05-24T16:37:05+08:00 ] 117.184.3.198 /oa/index.php?s=/Public/login
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001176s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001243s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000877s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000934s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001068s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001128s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.010115s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010182s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000748s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000732s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000616s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000803s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003047s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000935s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000985s ]
+
+[ 2013-05-24T16:37:09+08:00 ] 117.184.3.198 /oa/index.php?s=/Public/checkLogin
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001179s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001251s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000881s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000939s ]
+SQL: SHOW COLUMNS FROM `oa_user` [ RunTime:0.001163s ]
+SQL: SELECT * FROM `oa_user` WHERE ( `account` = 'admin' ) AND ( `status` > 0 ) LIMIT 1   [ RunTime:0.000223s ]
+SQL: UPDATE `oa_user` SET `last_login_time`=1369384629,`login_count`=login_count+1,`last_login_ip`='117.184.3.198' WHERE ( `id` = 7 ) [ RunTime:0.000275s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001087s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001151s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.008821s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008888s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000708s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000726s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000609s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000788s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002984s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000937s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000988s ]
+
+[ 2013-05-24T16:37:11+08:00 ] 117.184.3.198 /oa/index.php?s=/Content/tables
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001171s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001239s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000887s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000944s ]
+NOTIC: [8] Undefined offset:  2 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 7 行.
+SQL: SELECT u.id,u.nickname,c.am,c.pm,c.cid FROM oa_user AS u LEFT JOIN oa_content AS c ON c.uid=u.id  AND c.create_time='2013-05-24' WHERE ( u.is_admin = 0 ) AND ( u.status = 1 )  [ RunTime:0.003466s ]
+SQL: SELECT u.id,t.spend,t.content,p.pname FROM oa_time AS t LEFT JOIN oa_user AS u ON t.uid = u.id LEFT JOIN oa_project AS p ON p.pid = t.pid WHERE ( t.create_time = '2013-05-24' )  [ RunTime:0.000583s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\ContentAction.class.php 第 28 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001164s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001223s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+NOTIC: [8] Undefined index:  other D:\freehost\cyndi1991\web\OA\Home\Runtime\Cache\e6f8cf68c9393d66e60321239d060d91.php 第 439 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.021512s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021575s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000906s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000740s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000608s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000839s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003242s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000952s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001003s ]
+
+[ 2013-05-24T16:37:27+08:00 ] 117.184.3.198 /oa/index.php?s=/Personal/me
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001174s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001245s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000905s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000969s ]
+SQL: SHOW COLUMNS FROM `oa_user` [ RunTime:0.000993s ]
+SQL: SELECT * FROM `oa_user` WHERE ( `id` = 7 ) LIMIT 1   [ RunTime:0.000191s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001220s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001294s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.018631s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018701s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000805s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000730s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000605s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000813s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003100s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000947s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2013-05-24T16:37:34+08:00 ] 117.184.3.198 /oa/index.php?s=/User/power
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001190s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001263s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000884s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000941s ]
+SQL: SHOW COLUMNS FROM `oa_role` [ RunTime:0.000982s ]
+SQL: SHOW COLUMNS FROM `oa_access` [ RunTime:0.000804s ]
+SQL: SHOW COLUMNS FROM `oa_node` [ RunTime:0.001012s ]
+NOTIC: [8] Undefined offset:  2 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\UserAction.class.php 第 222 行.
+NOTIC: [8] Undefined offset:  3 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\UserAction.class.php 第 223 行.
+NOTIC: [8] Undefined offset:  4 D:\freehost\cyndi1991\web\OA\Home\Lib\Action\UserAction.class.php 第 224 行.
+SQL: SELECT `name` FROM `oa_role` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000079s ]
+SQL: SELECT * FROM `oa_role` WHERE ( `status` = 1 )  [ RunTime:0.000070s ]
+SQL: SELECT * FROM `oa_node` WHERE ( `level` = 1 ) AND ( `status` = 1 )  [ RunTime:0.019822s ]
+SQL: SELECT * FROM `oa_node` WHERE ( `level` = 2 ) AND ( `status` = 1 ) AND ( `pid` = null )  [ RunTime:0.000155s ]
+SQL: SELECT * FROM `oa_node` WHERE ( `level` = 3 ) AND ( `status` = 1 ) AND ( `pid` = null )  [ RunTime:0.000127s ]
+SQL: SELECT * FROM `oa_access` WHERE ( `role_id` = 1 )  [ RunTime:0.006903s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\UserAction.class.php 第 250 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\freehost\cyndi1991\web\OA\Home\Lib\Action\UserAction.class.php 第 255 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001280s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001343s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.048710s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048791s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000954s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000800s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000622s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000824s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003362s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000941s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000993s ]
+
+[ 2013-05-24T16:37:37+08:00 ] 117.184.3.198 /oa/index.php?s=/User/user
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001178s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001249s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000884s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000940s ]
+SQL: SHOW COLUMNS FROM `oa_user` [ RunTime:0.000990s ]
+SQL: SELECT * FROM `oa_user` WHERE ( `is_admin` = 0 )  [ RunTime:0.000333s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001183s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001250s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.018961s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019032s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000891s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000763s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000623s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000833s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003264s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000939s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000989s ]
+
