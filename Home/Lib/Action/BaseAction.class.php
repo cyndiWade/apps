@@ -29,6 +29,10 @@ class BaseAction extends Action {
 	protected  function _init() {
 		if ($this->isLogin()) {
 			$this->oUser = $_SESSION['user'];
+			
+			if (empty($_SESSION['app'])) {
+				$this->error('公司信息已过期，请重新登录！');
+			}
 			$this->oApp = $_SESSION['app'];
 		}  else {
 			$data = D('App')->getApp($_GET['company']);	//读取公司信息
@@ -44,7 +48,7 @@ class BaseAction extends Action {
 	 * 公共上传方法
 	 */
 	protected function upload() {
-		import('@.ORG.Net.UploadFile');
+		import('ORG.Net.UploadFile');
 		$upload = new UploadFile();
 		//上传检测
 		$upload->maxSize  = 3145728 ;									// 设置附件上传大小

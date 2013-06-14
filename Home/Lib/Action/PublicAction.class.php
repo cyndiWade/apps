@@ -63,7 +63,12 @@ class PublicAction extends Action {
         	$this->error('密码错误！');
         }
         
-        $_SESSION['app'] = $App->getApp($company);
+        $oApp = $App->getApp($company);
+        if (empty($oApp)) {
+        	$this->error('没有该公司！');
+        }
+        
+        $_SESSION['app'] =  $oApp;
         $_SESSION['user'] = $oUser;
         
 		$this->success('登录成功！',"?s=/Index/index");
