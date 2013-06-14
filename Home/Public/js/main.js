@@ -1863,8 +1863,10 @@ $(document).ready(function() {
 
 	//------------- Uniform  -------------//
 	//add class .nostyle if not want uniform to style field
-	$("input, textarea, select").not('.nostyle').uniform();
-
+	//$("input, textarea, select").not('.nostyle').uniform();
+	$("textarea, select").not('.nostyle').uniform();
+	
+	
 	//remove loadstate class from body and show the page
 	setTimeout('$("html").removeClass("loadstate")',500);
 
