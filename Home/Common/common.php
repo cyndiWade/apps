@@ -49,12 +49,6 @@ function time_conversion_2($data){
 }
 
 
-// function arrAddField(&$arr,$key,$val) {
-// 	foreach ($arr as $k=>$v) {
-// 		$arr[$] 
-// 	}
-// }
-
 /**
  * 获取数组val值中的字段
  * @param Array $arr

@@ -123,7 +123,7 @@
     <script type="text/javascript" src="Home/Public/js/main.js"></script>
    	<!---time JS--->
 	
-<script>
+<script type="text/javascript">
   $(function() {
   	$( "#datepicker" ).datepicker();
   });
@@ -133,27 +133,6 @@
   });  
 </script>	
 
-<script language="javascript">
-
-//    function add(x,id) {
-//        var a1 = document.getElementById(x);
-//		$.post("?s=/Content/select_data","id="+id,function(data){
-//			a1.innerHTML += data;
-//		},"html");
-//    }
-
-    function move(obj) {
-        var divs = document.getElementsByName("abc");
-        var o = document.getElementsByName("btn");
-        var num = 0;
-        for (var i = 0; i < o.length; i++) {
-            if (obj == o[i]) {
-                num = i;
-            }
-        }
-        divs[num].parentNode.removeChild(divs[num]);
-    }
-</script>
 
     </body>
 </html>
