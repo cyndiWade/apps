@@ -20,7 +20,7 @@
 
                 <div class="heading">
 
-                    <h3>权限管理</h3>                    
+                    <h3>活动信息</h3>                    
 
                     <div class="resBtnSearch">
                         <a href="#"><span class="icon16 icomoon-icon-search-3"></span></a>
@@ -52,7 +52,7 @@
 
                                     <h4>
                                         <span class="icon16 icomoon-icon-equalizer-2"></span>
-                                        <span>用户列表<a href="?s=/User/addUser"><button class="btn">新建</button></span>
+                                        <span>活动列表<a href="?s=/Active/add"><button class="btn">增加活动</button></span>
                                     </h4>
                                     <a href="#" class="minimize">Minimize</a>
                                 </div>
@@ -60,38 +60,29 @@
                                     <table class="responsive table table-bordered">
                                         <thead>
                                           <tr>
-                                            <th>序号</th>
-                                            <th>员工姓名</th>
-                                            <th>账号名</th>
-                                            <th>描述</th>
-                                            <th>是否在职</th>
+											<th>活动编号</th>
+                                            <th>活动名称</th>
+                                            <th>活动简介</th>
+                                            <th>是否置顶</th>
+                                            <th>添加时间</th>
                                             <th>操作</th>
                                           </tr>
                                         </thead>
                                         <tbody>
-                                        <volist name="UserLis" id="vo" key="i">
+                                        <volist name="data" id="vo" key="i">
                                           <tr>
-                                            <td>{$i}</td>
-                                            <td>{$vo.nickname}</td>
-                                            <td><p class="text05">{$vo.account}</p></td>
-                                            <td><p class="text05">	{$vo.remark}</p></td>
-                                            <td><p class="text06">                    	
-												<if condition="$vo.status eq 1 "> 在职										
-												<else /> <span style="color:red;">离职</span>								
-												</if>
+                                            <td>{$vo.id}</td>
+                                            <td>{$vo.title}</td>
+                                            <td><p class="text05">{$vo.info}</p></td>
+                                            <td><p class="text05"><if condition="$vo.sort eq 1 ">是<else />否</if></p></td>
+                                            <td><p class="text06">  
+												{$vo.time}
 												</p>
 											</td>
 											<td>
                                                 <div class="controls center">
-                                                	<a href="?s=/User/userDetailed/{$vo.id}" title="详细信息" class="tip"><span class="icon12  icomoon-icon-user-3"></span></a>
-                                                    <a href="?s=/User/updateUser/{$vo.id}" title="编辑" class="tip"><span class="icon12 icomoon-icon-pencil"></span></a>
-                                                    
-													<if condition="$vo.status eq 1 ">
-														<a href="?s=/User/deleteUser/{$vo.id}/0/leave" title="离职" class="tip" ><span class="icon12 icomoon-icon-smiley"></span></a>								
-													<else /> 
-														<a href="?s=/User/deleteUser/{$vo.id}/1/leave" title="恢复" class="tip" ><span class="icon12 icomoon-icon-sad-2"></span></a>							
-													</if>
-													<a href="?s=/User/deleteUser/{$vo.id}/1/delete" title="删除" class="tip" onclick="return confirm('删除后无法恢复，确定要删除吗？') ? true : false"><span class="icon12 icomoon-icon-remove"></span></a>			
+													<a href="?s=/Active/edit/id/{$vo.id}" title="编辑" class="tip"><span class="icon12 icomoon-icon-pencil"></span></a> &nbsp;
+													<a href="?s=/Active/delete/id/{$vo.id}" title="删除" class="tip" onclick="return confirm('删除后无法恢复，确定要删除吗？') ? true : false"><span class="icon12 icomoon-icon-remove"></span></a>
                                                 </div>
                                             </td>
                                           </tr>

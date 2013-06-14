@@ -1,4 +1,4 @@
-﻿ <!-- loading animation -->
+ <!-- loading animation -->
     <div id="qLoverlay"></div>
     <div id="qLbar"></div>
     
@@ -7,7 +7,7 @@
         <div class="navbar">
             <div class="navbar-inner">
               <div class="container-fluid">
-                <a class="brand" href="dashboard.html">App管理后台.<span class="slogan"></span></a>
+                <a class="brand" href="dashboard.html">拍拍说后台管理.<span class="slogan"></span></a>
                 <div class="nav-no-collapse">
                     
                   
@@ -20,12 +20,5 @@
             </div><!-- /navbar-inner -->
           </div><!-- /navbar --> 
   </div><!-- End #header -->
- 
- <script>
- 	function confirmDelete(url) {
-		if (confirm('确定要删除该记录吗？')) {
-			window.location = url;
-		}
-	}
- </script>
- 
+   
+   

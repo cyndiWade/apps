@@ -5,8 +5,8 @@ class BaseModel extends Model {
 	
 
 	//删除方法
-	protected function del($condition) {
-		return $this->where($condition)->update(array('status'=>-2));
+	public function del($condition) {
+		return $this->where($condition)->data(array('status'=>-2))->save();
 	}
 	
 	

@@ -11,10 +11,16 @@ class AppAction extends BaseAction {
 					'name' =>$_POST['name'],
 					'info' =>$_POST['info'],
 			);
-			$files = $this->upload();
-			$data['logo'] = $files[0]['savename'];
+
+			if (!empty($_FILES['logo']['name'])) {
+				$files = $this->upload();
+				$data['logo'] = $files[0]['savename'];
+			}
 			
 			D('App')->where(array('id' => $this->oApp->id))->data($data)->save();
+			
+			$data = array_merge((array) $this->oApp, $data);
+
 			$_SESSION['app'] = (object) $data;
 			$this->success('保存成功！');
 		} else {
