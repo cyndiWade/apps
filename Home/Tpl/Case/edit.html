@@ -45,6 +45,13 @@ textarea{
 	height:80px;
 	overflow:auto;
 }
+#pics img{
+	width:200px;
+	height:200px;
+	border:none;
+	margin:0 10px 10px 0;
+	cursor:pointer;
+}
 </style>   
 
 
@@ -98,7 +105,7 @@ textarea{
                                 </div>
                                 <div class="content noPad">
                                 
-                                	<form method="post" action="?s=/Case/add" enctype ="multipart/form-data">
+                                	<form method="post" action="" enctype ="multipart/form-data">
                                 		<input type="hidden" name="PREV_URL" value="{$PREV_URL}" />
                                     <table class="responsive table table-bordered">
                                         <thead>
@@ -129,9 +136,11 @@ textarea{
                                             <th class="ttl01">已上传图片：</th>
                                             <th>
                                             	<div id="pics">
+                                            		<!-- 图片数据 -->
                                             		<volist name="pics" id="pic">
-                                            		<img src="{$Think.config.TMPL_PARSE_STRING.__IMAGES__}{$pic.url}" data-img="{$pic.id}" style="width:200px;height:200px;"/>
+                                            		<img src="{$Think.config.TMPL_PARSE_STRING.__IMAGES__}{$pic.url}" data-img="{$pic.id}" />
 													</volist>
+											
 												</div>
 												
 											</th>
@@ -141,10 +150,14 @@ textarea{
                                             <th>
                                             	<div class="selectwidth">
 	                                            	<select name="uid">
-	                                            		<volist name="designers" id="vo">
-		                                            		<option value="{$vo.id}">{$vo.nickname}</option>
-														</volist>
-		                                            </select>
+														<volist name="designers" id="vo">
+	                                            			<if condition="($caseInfo.uid eq $vo['id'])  ">
+	                                            				<option value="{$vo.id}" selected="selected">{$vo.nickname}</option>
+															<else />
+																<option value="{$vo.id}">{$vo.nickname}</option>
+															</if>
+															</volist>
+		                                           </select>
 												</div>
 											</th>
                                           </tr>
@@ -241,7 +254,8 @@ $(function () {
 		//获取操作对象
 		var add = $('#add');
 		var oUplode = $('#upload');
-
+		
+		//添加删除按钮
 		add.click(function () {
 			oUplode.append('<div><input type="file" class="aa" name="pics[]" /><span class="icomoon-icon-cancel-3 remove"></span></div>');
 		});
@@ -255,15 +269,16 @@ $(function () {
 		(function () {
 			
 			//ajax请求数据	
-			function ajaxData (mid,info) {
+			function ajaxData (mid,info,type) {
 				var data;
 				$.ajaxSetup({
 					async: false,//async:false 同步请求  true为异步请求
 				});
 				//ajax 请求数据
-				$.post('?s=/Enter/imgDiscuss/',{
+				$.post('?s=/CasePics/edit/',{
 					'mid' : mid,
-					'info' : info
+					'info' : info,
+					'type' :type
 				},function (obj) {
 					data = obj;
 				},'text');
@@ -273,20 +288,20 @@ $(function () {
 			var oDiv = $('#pics');				//图片div容器
 			var arrImg = oDiv.find('img');	//所有图片对象
 			var oText = $('.info');				//对话框textarea 
-			
-			
+
+			//图片编辑
 			arrImg.click(function () {
 				var _this = $(this);
 				var mid = _this.data('img');
-				oText.val('');	//清空
+				
+				var com = ajaxData(mid,'','select');					//查找评论
+				oText.val(com);													//显示评论
 				
 				$('.Popup').dialog({
+					modal : true,
 					buttons:{
 						'提交':function (event) {		
-
-							//ajaxData(mid,textarea.val());
-							alert(oText.val())
-							alert(mid);
+							ajaxData(mid,oText.val(),'save');			//添加评论
 							$(this).dialog('close');
 						},
 						'关闭':function (event) {

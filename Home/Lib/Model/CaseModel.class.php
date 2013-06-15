@@ -19,6 +19,10 @@ class CaseModel extends BaseModel {
 		return $this->where(array('id'=>$id,'status'=>0))->find();
 	}
 	
+	//修改数据
+	public function saveCase($cid) {
+		return $this->where(array('id'=>$cid))->save();
+	}
 	
 	public function _add() {
 		return $this->add();

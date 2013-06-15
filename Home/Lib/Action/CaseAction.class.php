@@ -6,6 +6,20 @@
  */
 class CaseAction extends BaseAction {
 	
+	private function upImg($CasePics,$app_id,$cid) {
+		$pics = parent::upload();	//执行上传操作
+		//上传文件写入数据库
+		if ($pics) {
+			foreach ($pics AS $key=>$val) {
+				$CasePics->app_id = $app_id;		//公司id
+				$CasePics->cid = $cid;						//案例id
+				$CasePics->url = $val['savename'];		//图片地址
+				$CasePics->add();
+			}
+		}
+	} 
+	
+	
 	//案例列表
 	public function show() {
 		$Case = D('Case');	//案例表
@@ -33,19 +47,10 @@ class CaseAction extends BaseAction {
 			$Case->app_id = $app_id;			//公司id
 
 			$Case->time = time();											//当前时间
-			$state = $Case->_add();			
-			if ($state) {
-				$pics = parent::upload();	//执行上传操作
-				//上传文件写入数据库
-				if ($pics) {
-					foreach ($pics AS $key=>$val) {
-						$CasePics->app_id = $app_id;		//公司id
-						$CasePics->cid = $state;				//案例id
-						$CasePics->url = $val['savename'];		//图片地址
-						$CasePics->add();
-					}
-				}
-				$this->success('上传成功！');	
+			$cid = $Case->_add();			
+			if ($cid) {	
+				$this->upImg($CasePics,$app_id,$cid);			//执行上传操作
+				$this->success('添加成功！','?s=/Case/show');	
 				exit;
 			}
 		}
@@ -66,8 +71,17 @@ class CaseAction extends BaseAction {
 		$cid = $_GET['cid'];	//案例id
 		$app_id = $this->oUser->app_id;	//公司id
 		
+		//更新数据
+		if ($this->isPOST()) {
+			$Case->create();
+			$Case->saveCase($cid);
+			//$this->upImg($CasePics,$app_id,$cid);			//执行上传操作
+			$this->success('已更新');
+			exit;
+		}
+		
 		//项目数据
-		$caseInfo = $Case->getOneCase($cid);	
+		$caseInfo = $Case->getOneCase($cid);
 		parent::check_power($caseInfo['app_id']);	//验证是否为该公司数据
 		
 		//案例图片
@@ -76,14 +90,22 @@ class CaseAction extends BaseAction {
 		//读取设计师数据
 		$designers = $User->getDesigner($app_id);
 
-		
+
 		$this->assign('caseInfo',$caseInfo);
 		$this->assign('pics',$pics);
 		$this->assign('designers',$designers);
 		$this->display();
 	}
 	
+	//删除案例
+	public function del() {
+		$Case = D('Case');	//案例表
+		$id = $this->_get('cid');		//项目id
+		$Case->del(array('id'=>$id)) ? $this->success('删除成功') : $this->error('删除失败');
+	}
+	
 	
 }
+
 
 ?>
