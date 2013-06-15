@@ -74,7 +74,7 @@ class CaseAction extends BaseAction {
 		//更新数据
 		if ($this->isPOST()) {
 			$Case->create();
-			$Case->saveCase($cid);
+			$Case->saveCase($cid);									//修改数据
 			$this->upImg($CasePics,$app_id,$cid);			//执行上传操作
 			$this->success('已更新');
 			exit;
