@@ -6,6 +6,13 @@
  */
 class CaseAction extends BaseAction {
 	
+	
+	/**
+	 * 上传操作图片操作
+	 * @param unknown_type $CasePics
+	 * @param unknown_type $app_id
+	 * @param unknown_type $cid
+	 */
 	private function upImg($CasePics,$app_id,$cid) {
 		$pics = parent::upload();	//执行上传操作
 		//上传文件写入数据库
@@ -96,6 +103,7 @@ class CaseAction extends BaseAction {
 		$this->assign('designers',$designers);
 		$this->display();
 	}
+	
 	
 	//删除案例
 	public function del() {
