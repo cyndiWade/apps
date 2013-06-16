@@ -59,6 +59,10 @@ class UserAction extends BaseAction {
 		if ($this->isPOST()) {
 			//账号验证
 			$account = $this->_post('account');
+			$password = $this->_post('password');
+			if (empty($account)) $this->error('账号不得为空');
+			if (empty($password)) $this->error('密码不得为空');
+			
 			$isHave = $User->getUser($account,$app_id);	//获取用户信息
 			if ($isHave) $this->error('对不起，此用户已注册');
 			
@@ -79,13 +83,15 @@ class UserAction extends BaseAction {
 		
 		if ($this->isPOST()) {
 			if (!$this->_post('password')) $this->error('密码不得为空');
+			
+			//数据库数据修改
 			$this->_saveUser($User,'edit',$id) ? $this->success('修改成功') : $this->error('没有数据被修改');
 			exit;
 		}
+		
+		//获取用户数据
 		$info = $User->getOneDate($id,$app_id);
 		if (empty($info)) $this->error('此用户不存在','?s=/User/add');
-		
-		
 		
 		$this->assign('info',$info);
 		$this->display();

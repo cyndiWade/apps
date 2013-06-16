@@ -104,10 +104,20 @@
                                                 <div class="row-fluid">
                                                     <label class="form-label span4" for="normal">用户类型</label>
 													<div style="width:200px;float:left;">
-													<select class="uploader" name="type">
-														
-														<option value="1">设计师</option>
-														<option value="2">普通用户</option>
+													<select class="uploader" name="type">				
+														<if condition="($info:type eq 0)">
+															<option value="0" selected="selected">管理员</option>
+															<option value="1" >设计师</option>
+															<option value="2">普通用户</option>
+														<elseif condition="($info:type eq 1)" />
+															<option value="0">管理员</option>
+															<option value="1"  selected="selected">设计师</option>
+															<option value="2">普通用户</option>
+														<else />
+															<option value="0">管理员</option>
+															<option value="1" >设计师</option>
+															<option value="2" selected="selected">普通用户</option>	
+														</if >
 													</select>
 													</div>
 													
