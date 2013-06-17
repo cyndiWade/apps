@@ -124,6 +124,33 @@ function setTime(&$all) {
 }
 
 
+//模拟HTTP请求
+function send_http($content,$_URL) {
+	$top = 'apps';
+	$headers = array(
+		//	'Authorization: key=' . $top,
+			'Content-Type: application/x-www-form-urlencoded'		
+			//application/json   multipart/form-data  application/x-www-form-urlencoded
+	);
+
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, $_URL);
+	curl_setopt($ch, CURLOPT_POST, true);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);	//头文件信息
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $content);	//请求信息
+
+	$result = curl_exec($ch);
+	if ($result === FALSE) {
+		die('Problem occurred: ' . curl_error($ch));
+	}
+
+	curl_close($ch);
+
+	return $result;
+}
+
 
 
 ?>

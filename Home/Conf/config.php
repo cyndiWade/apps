@@ -24,11 +24,15 @@ $system = array(
 	/*以下添加扩展配置*/
 	'VAR_PAGE'=>'p',
 	'PREV_URL' => $_SERVER["HTTP_REFERER"],		//上一页地址配置
-	
+
+	//上传文件目录	
 	'TMPL_PARSE_STRING' => array(
 		'__IMAGES__' => 'data/images/',
 		'__VIDEO__' => 'data/video/',
 	),
+
+	//访问文件目录
+	'PUBLIC_FILE' =>$_SERVER['SERVER_NAME'].dirname($_SERVER['SCRIPT_NAME']).'/',
 		
 );
 
