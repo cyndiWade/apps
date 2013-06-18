@@ -71,7 +71,6 @@ class ApiBaseAction extends Action {
 
 	}
 	
-
 }
 
 ?>
