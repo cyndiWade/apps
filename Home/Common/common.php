@@ -151,6 +151,17 @@ function send_http($content,$_URL) {
 	return $result;
 }
 
-
+/*
+ * 获取request变量
+ */
+function getRequset($name, $default = '') {
+	if (isset($_POST[$name])) {
+		return $_POST[$name];
+	} elseif (isset($_GET[$name])) {
+		return $_GET[$name];
+	} else {
+		return $default;
+	}
+}
 
 ?>

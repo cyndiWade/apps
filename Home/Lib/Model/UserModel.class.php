@@ -15,6 +15,13 @@ class UserModel extends BaseModel {
 		return empty($data) ? null : (object) $data;
 	}
 	
+	public function getUserByUid($uid) {
+		if (empty($uid)) return null;
+	
+		$data = $this->where(array('id' => $uid))->find();
+		return empty($data) ? null : (object) $data;
+	}
+	
 
 	//获取所有设计师
 	public function getDesigner ($_appid) {
