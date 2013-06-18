@@ -3,7 +3,7 @@
  *主题表
  */
 
-class TopicModel extends CommonModel {
+class TopicModel extends BaseModel {
 	
 	public function show($condition) {
 		
@@ -30,13 +30,7 @@ class TopicModel extends CommonModel {
 		");
 	}
 	
-	public function add() {
-		return $this->add();
-	}
-	
-	public function del($condition) {
-		return $this->where($condition)->delete();
-	}
+
 
 	
 }

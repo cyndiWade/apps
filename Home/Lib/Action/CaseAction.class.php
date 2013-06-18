@@ -132,11 +132,10 @@ class CaseAction extends BaseAction {
 	public function demo() {
 		if ($this->isPOST()) {
 			dump($_FILES);
-
-
-			if (!empty($_FILES['pic']['name'])) $this->ApiUpload($_FILES['pic'],'pic');
-			if (!empty($_FILES['video']['name'])) $this->ApiUpload($_FILES['video'],'video');
-			
+			if (!empty($_FILES['pic']['name'])) $pic = $this->ApiUpload($_FILES['pic'],'pic');
+			if (!empty($_FILES['video']['name'])) $video = $this->ApiUpload($_FILES['video'],'video');
+			print_r($pic);	
+			print_r($video);
 		}
 	
 		$this->display();
@@ -165,15 +164,16 @@ class CaseAction extends BaseAction {
 		$upload->subType = 'date';					// 子目录创建方式，默认为hash，可以设置为hash或者date日期格式的文件夹名
 		$upload->saveRule =  'uniqid';				// 上传文件的保存规则，必须是一个无需任何参数的函数名
 		
+		$execute = $upload->uploadOne($file);		//执行上传
 		//执行上传操作
-		if(!$upload->uploadOne($file)) {						// 上传错误提示错误信息
+		if(!$execute) {						// 上传错误提示错误信息
 			$status = 'error';
 			$info = $upload->getErrorMsg();
 		}else{// 上传成功 获取上传文件信息
 			$status = 'success';
-			$info =  $upload->getUploadFileInfo();
+			$info =  $execute;
 		}
-		return array("status"=>"$status","info"=>"$info");
+		return array("status"=>"$status","info"=>$info);
 	}
 	
 }
