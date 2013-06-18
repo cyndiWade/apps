@@ -36,12 +36,16 @@ class ApiAction extends ApiBaseAction {
 	 */
 	public  function addTopic() {
 		$Topic = D('Topic');
-		$Topic->create();	
-		
+		$Topic->create();			//手机Post提交数据
 		$Topic->time = time();
 		
-		if (isset($_FILES['pic'])) 	$pic = parent::ApiUpload('pic');
-		if (isset($_FILES['video'])) 	$video = parent::ApiUpload('pic');
+		if (!empty($_FILES['pic']['name'])) {
+			$pic = parent::ApiUpload($_FILES['pic'],'pic');				//上传图片文件
+		}
+		if (!empty($_FILES['video']['name'])) {
+			$video = parent::ApiUpload($_FILES['video'],'video');	//上传音频文件
+		} 
+		
 		
 // 		$app_id =  $this->AppInfo->id;		//公司ID
 // 		$user_id = $this->_post('user_id');	//用户id
