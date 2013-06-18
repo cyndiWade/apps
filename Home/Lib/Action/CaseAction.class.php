@@ -113,22 +113,37 @@ class CaseAction extends BaseAction {
 	}
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/**
+	 * 测试
+	 */
+	
 	public function demo() {
 		if ($this->isPOST()) {
-			dump($_FILES);
-
-			$this->ApiUpload();
+			//dump($_FILES);
+		dump($_FILES['video']);
+			$this->ApiUpload($_FILES['pic'],'pic');
+			$this->ApiUpload($_FILES['video'],'video');
 		}
 	
 		$this->display();
 	}
 	
 	
-	
-	
-	
+
 	//IOS统一上传文件方法
-	private function ApiUpload($type) {
+	private function ApiUpload($file,$type) {
 		if ($type == 'pic')  {
 			$allowExts  = array('jpg', 'gif', 'png', 'jpeg');
 			$dir = C('TMPL_PARSE_STRING.__IMAGES__');
@@ -148,7 +163,7 @@ class CaseAction extends BaseAction {
 		$upload->saveRule =  'uniqid';				// 上传文件的保存规则，必须是一个无需任何参数的函数名
 			
 		//执行上传操作
-		if(!$upload->upload()) {						// 上传错误提示错误信息
+		if(!$upload->uploadOne($file)) {						// 上传错误提示错误信息
 			$status = 'error';
 			$info = $upload->getErrorMsg();
 		}else{// 上传成功 获取上传文件信息
