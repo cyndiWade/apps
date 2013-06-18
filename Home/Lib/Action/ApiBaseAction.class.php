@@ -1,7 +1,7 @@
 <?php 
 
 /**
- * 对外接口核心类
+ * 接口----基础类
  */
 class ApiBaseAction extends Action {
 	

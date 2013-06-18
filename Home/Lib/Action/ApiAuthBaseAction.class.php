@@ -1,7 +1,7 @@
 <?php 
 
 /**
- * 对外接口核心类(登录后)
+ * 对外接口核心类(需要登录后)
  */
 class ApiAuthBaseAction extends ApiBaseAction {
 	
@@ -55,15 +55,7 @@ class ApiAuthBaseAction extends ApiBaseAction {
 		return array("status"=>$status,"info"=>$info);
 	
 	}
-	
-	
-	//文件访问地址
-	protected function visitUrl($file_url,$type) {
-		if ($type == 'img') return 'http://'.C('PUBLIC_FILE').C('TMPL_PARSE_STRING.__IMAGES__').$file_url;
-		if ($type == 'video') return 'http://'.C('PUBLIC_FILE').C('TMPL_PARSE_STRING.__VIDEO__').$file_url;
-		
-	}
-	
+
 }
 
 ?>

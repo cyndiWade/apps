@@ -1,15 +1,12 @@
 <?php 
 
 /**
- * IOS端API
+ * 	接口功能模块类
  */
-class ApiAction extends ApiBaseAction {
+class ApiAction extends ApiAuthBaseAction {
 
 	
-	public function index() {
-		echo parent::_init();
-	}
-	
+
 	
 	//首页活动
 	public function active() {

@@ -164,4 +164,12 @@ function getRequset($name, $default = '') {
 	}
 }
 
+
+
+//文件访问地址
+function visitUrl($file_url,$type) {
+	if ($type == 'img') return 'http://'.C('PUBLIC_FILE').C('TMPL_PARSE_STRING.__IMAGES__').$file_url;
+	if ($type == 'video') return 'http://'.C('PUBLIC_FILE').C('TMPL_PARSE_STRING.__VIDEO__').$file_url;
+}
+
 ?>

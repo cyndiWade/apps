@@ -1,7 +1,7 @@
 <?php 
 
 /**
- * 对外接口核心类
+ * 对外接口公共类(不需要登录)
  */
 class ApiPublicBaseAction extends ApiBaseAction {
 	
