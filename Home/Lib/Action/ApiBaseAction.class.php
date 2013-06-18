@@ -5,20 +5,21 @@
  */
 class ApiBaseAction extends Action {
 	
-	protected $AppInfo;	//公司信息
+	protected $AppInfo;				//公司信息
 	
 	public function __construct() {
-		$this->_init();		//接收用户信息
+		$this->_init();					//接收用户信息
 		$this->checkApp();
 	}
 	
+	//初始化化方法
 	private  function _init() {
-		$this->AppInfo->id = $_POST['app_id'];
-		//$this->AppInfo->id = 1;
+		//$this->AppInfo->id = $_POST['app_id'];
+		$this->AppInfo->id = 1;
 	}
-	
+	//验证公司是否存在
 	private function checkApp() {
-		if (!$this->AppInfo->id) exit(json_encode(array("status"=>"error","info"=>"没有指定公司")));
+		if (!$this->AppInfo->id) exit(json_encode(array("status"=>"error","info"=>"Not found Company")));
 	}
 
 	
@@ -90,10 +91,10 @@ class ApiBaseAction extends Action {
 	}
 	
 	
-	//访问地址
+	//文件访问地址
 	protected function visitUrl($file_url,$type) {
-		if ($type == 'img') return C('PUBLIC_FILE').C('TMPL_PARSE_STRING.__IMAGES__').$file_url;
-		if ($type == 'video') return C('PUBLIC_FILE').C('TMPL_PARSE_STRING.__VIDEO__').$file_url;
+		if ($type == 'img') return 'http://'.C('PUBLIC_FILE').C('TMPL_PARSE_STRING.__IMAGES__').$file_url;
+		if ($type == 'video') return 'http://'.C('PUBLIC_FILE').C('TMPL_PARSE_STRING.__VIDEO__').$file_url;
 		
 	}
 	

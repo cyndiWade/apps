@@ -21,9 +21,37 @@ class ApiAction extends ApiBaseAction {
 		foreach ($list AS $key=>$val) {
 			$list[$key]['pics'] = parent::visitUrl($list[$key]['pics'],'img');
 		}
-
-		echo json_encode($list);
+		
+		$list ? $status = "success" : $status = "error";
+		$return = array(
+			"status"=>$status,
+			"info"=>$list
+		);
+		echo json_encode($return);
 	}
+	
+	
+	/**
+	 * 添加主题(语音、图片、文字)
+	 */
+	public  function addTopic() {
+		$Topic = D('Topic');
+		$Topic->create();	
+		
+		$Topic->time = time();
+		
+		if (isset($_FILES['pic'])) 	$pic = parent::ApiUpload('pic');
+		if (isset($_FILES['video'])) 	$video = parent::ApiUpload('pic');
+		
+// 		$app_id =  $this->AppInfo->id;		//公司ID
+// 		$user_id = $this->_post('user_id');	//用户id
+// 		$type = $this->_post('type');			//主题类型
+// 		$pid = $this->_post('pid');				//所属项目
+		
+	//	echo $Topic->add();
+		
+	}
+	
 	
 	
 	//评论数据接口
@@ -31,6 +59,9 @@ class ApiAction extends ApiBaseAction {
 			
 		parent::ApiUpload();
 	}
+	
+	
+	
 	
 
 	//错误提示
