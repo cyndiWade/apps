@@ -41,10 +41,14 @@ class UserModel extends BaseModel {
 		}
 	}
 	
-
-	
-	
-
+	public function addUser($data) {
+		$uid = $this->add($data);
+		if (empty($uid)) {
+			return false;
+		}
+		
+		return $this->getUserByUid($uid);
+	}
 }
 
 

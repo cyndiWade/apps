@@ -24,6 +24,21 @@ class SessionModel extends BaseModel {
 		}
 	}
 	
+	/*
+	 * 生成sessionKey
+	 */
+	public function makeKey($oUser) {
+		$key = $oUser->id . '|' . $oUser->account . '|' . $oUser->password . '|' . mt_rand();
+		$key = md5($key);
+		
+		$data = array(
+			'key' => $key,
+			'expire' => time() + 7200,	
+		);
+		$this->where(array('uid' => $oUser->id))->data($data)->save();
+		
+		return $key;
+	}
 }
 
 
