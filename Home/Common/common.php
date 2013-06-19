@@ -158,7 +158,7 @@ function send_http($content,$_URL) {
 /*
  * 获取request变量
  */
-function getRequset($name, $default = '') {
+function getRequest($name, $default = '') {
 	if (isset($_POST[$name])) {
 		return $_POST[$name];
 	} elseif (isset($_GET[$name])) {
