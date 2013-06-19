@@ -5,15 +5,23 @@
  */
 class ApiAuthBaseAction extends ApiBaseAction {
 	
-	protected $eliminate = array();	//免验证模块
+	//过滤部分不需要，登录验证的模块
+	protected $eliminate = array(
+		'ApiTopic/index',
+		
+	);				
 	
 	public function __construct() {
 		parent::__construct();
-		
-		$this->checkLogin();//检查的登录
+
+		//对免验证模块，不进行登录验证。
+		if (!in_array(MODULE_NAME.'/'.ACTION_NAME,$this->eliminate)) {
+			$this->checkLogin();//检查的登录
+		}
+
 	}
 	
-	protected function checkLogin() {
+	private function checkLogin() {
 		if (empty($this->oUser)) {
 			$this->callback(STATUS_NOT_LOGIN, '未登录！');
 		}

@@ -6,11 +6,14 @@
 class ApiTopicAction extends ApiAuthBaseAction {
 	
 	
+	//主题数据列表显示
 	public function index() {
-		echo 123;
+		
+		
 	}
 	
-
+	
+	
 	/**
 	 * 添加主题(语音、图片、文字)
 	 */
