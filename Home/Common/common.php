@@ -1,7 +1,7 @@
 <?php
-define('STATUS_SUCCESS', 0);//获取成功
-define('STATUS_ERROR', 1001);//其他错误
-define('STATUS_NOT_LOGIN', 1002);//未登录
+define('STATUS_SUCCESS', "0");//获取成功
+define('STATUS_ERROR', "1001");//其他错误
+define('STATUS_NOT_LOGIN', "1002");//未登录
 
 /*	判断是否为post提交
  * @$value  post提交的值
@@ -158,7 +158,7 @@ function send_http($content,$_URL) {
 /*
  * 获取request变量
  */
-function getRequset($name, $default = '') {
+function getRequest($name, $default = '') {
 	if (isset($_POST[$name])) {
 		return $_POST[$name];
 	} elseif (isset($_GET[$name])) {
@@ -174,6 +174,23 @@ function getRequset($name, $default = '') {
 function visitUrl($file_url,$type) {
 	if ($type == 'img') return 'http://'.C('PUBLIC_FILE').C('TMPL_PARSE_STRING.__IMAGES__').$file_url;
 	if ($type == 'video') return 'http://'.C('PUBLIC_FILE').C('TMPL_PARSE_STRING.__VIDEO__').$file_url;
+}
+
+
+//数组的插入与删除
+/**
+ * 5、数组任意部位插入新的值，保持排序
+ * @param data  		$data		插入的数据
+ * @param num	 	$num		插入的位置
+ * @param array 		 $array		要操作的数组
+ * @return array
+ */
+function InsertValArray($data,$num,&$array) {
+	for ($i=count($array);$i>$num;$i--) {
+		$array[$i] = $array[$i-1];	//把数组的值向后移动
+	}
+	$array[$num] =  $data;			//在指定位置插入数据
+	//return $array;
 }
 
 ?>

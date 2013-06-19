@@ -5,6 +5,8 @@
  */
 class ApiAuthBaseAction extends ApiBaseAction {
 	
+	protected $eliminate = array();	//免验证模块
+	
 	public function __construct() {
 		parent::__construct();
 		
@@ -28,7 +30,7 @@ class ApiAuthBaseAction extends ApiBaseAction {
 			$allowExts  = array('jpg', 'gif', 'png', 'jpeg');
 			$dir = C('TMPL_PARSE_STRING.__IMAGES__');
 		} elseif ($type == 'voice') {
-			$allowExts = array('mp3');
+			$allowExts = array('aac','mp3');
 			$dir = C('TMPL_PARSE_STRING.__VIDEO__');
 		}
 	
@@ -46,13 +48,12 @@ class ApiAuthBaseAction extends ApiBaseAction {
 		$execute = $upload->uploadOne($file);
 		//执行上传操作
 		if(!$execute) {						// 上传错误提示错误信息
-			$status = "error";
-			$info = $upload->getErrorMsg();
+			 $upload->getErrorMsg();
+			 return null;
 		}else{// 上传成功 获取上传文件信息
-			$status = "success";
-			$info =  $execute;
+			return $execute;
 		}
-		return array("status"=>$status,"info"=>$info);
+		
 	
 	}
 
