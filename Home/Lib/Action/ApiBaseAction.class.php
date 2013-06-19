@@ -8,10 +8,6 @@ class ApiBaseAction extends Action {
 	protected $oApp;//公司信息
 	protected $oUser;//用户信息
 	
-	public const STATUS_SUCCESS = 0;//获取成功
-	public const STATUS_ERROR = 1001;//其他错误
-	public const STATUS_NOT_LOGIN = 1002;//未登录
-	
 	public function __construct() {
 		parent::__construct();
 		
@@ -34,7 +30,7 @@ class ApiBaseAction extends Action {
 	 * 回调函数
 	 * 
 	 */
-	protected function callback($status = self::STATUS_SUCCESS, $msg = '获取成功！', $data = array()) {
+	protected function callback($status = STATUS_SUCCESS, $msg = '获取成功！', $data = array()) {
 		$ret = array(
 			'status' => $status,
 			'msg' => $msg,

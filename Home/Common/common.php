@@ -1,4 +1,8 @@
 <?php
+define('STATUS_SUCCESS', 0);//获取成功
+define('STATUS_ERROR', 1001);//其他错误
+define('STATUS_NOT_LOGIN', 1002);//未登录
+
 /*	判断是否为post提交
  * @$value  post提交的值
 */
