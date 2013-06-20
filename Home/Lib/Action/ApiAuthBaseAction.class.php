@@ -5,13 +5,23 @@
  */
 class ApiAuthBaseAction extends ApiBaseAction {
 	
+	//过滤部分不需要，登录验证的模块.A
+	protected $eliminate = array(
+		'ApiTopic/index',
+		
+	);				
+	
 	public function __construct() {
 		parent::__construct();
-		
-		$this->checkLogin();//检查的登录
+
+		//对免验证模块，不进行登录验证。
+		if (!in_array(MODULE_NAME.'/'.ACTION_NAME,$this->eliminate)) {
+			$this->checkLogin();//检查的登录
+		}
+
 	}
 	
-	protected function checkLogin() {
+	private function checkLogin() {
 		if (empty($this->oUser)) {
 			$this->callback(STATUS_NOT_LOGIN, '未登录！');
 		}
@@ -28,7 +38,7 @@ class ApiAuthBaseAction extends ApiBaseAction {
 			$allowExts  = array('jpg', 'gif', 'png', 'jpeg');
 			$dir = C('TMPL_PARSE_STRING.__IMAGES__');
 		} elseif ($type == 'voice') {
-			$allowExts = array('mp3');
+			$allowExts = array('aac','mp3');
 			$dir = C('TMPL_PARSE_STRING.__VIDEO__');
 		}
 	
@@ -46,13 +56,12 @@ class ApiAuthBaseAction extends ApiBaseAction {
 		$execute = $upload->uploadOne($file);
 		//执行上传操作
 		if(!$execute) {						// 上传错误提示错误信息
-			$status = "error";
-			$info = $upload->getErrorMsg();
+			 $upload->getErrorMsg();
+			 return null;
 		}else{// 上传成功 获取上传文件信息
-			$status = "success";
-			$info =  $execute;
+			return $execute;
 		}
-		return array("status"=>$status,"info"=>$info);
+		
 	
 	}
 
