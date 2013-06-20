@@ -16,7 +16,8 @@ class ApiActiveAction extends ApiPublicBaseAction {
 		if ($list) {
 			//重新组合图片格式
 			foreach ($list AS $key=>$val) {
-				$list[$key]['pics'] = visitUrl($list[$key]['pics'],'img');
+				dump($val);
+				$list[$key]['pics'] = visitUrl($list[$key]['pics']);
 			}
 			$this->callback(STATUS_SUCCESS, "获取成功！",$list);
 		} else {

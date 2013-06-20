@@ -36,9 +36,9 @@ class ApiTopicAction extends ApiAuthBaseAction {
 		foreach ($topicList AS $key=>$val) {
 			$topicList[$key]['comments'] = $groupCom[$val['id']];
 		}
-		
-		print_r($topicList);
 
+		//print_r($topicList);
+		$this->callback(STATUS_SUCCESS, '获取成功',$topicList);
 	}
 	
 	

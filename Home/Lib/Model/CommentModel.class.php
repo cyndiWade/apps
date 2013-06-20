@@ -11,7 +11,7 @@ class CommentModel extends BaseModel {
 		return $data;
 	}
 	
-	//获取所有评论内容
+	//获取指定条数评论
 	public function all_com($ids) {
 		$data =  $this->query("
 			SELECT 
@@ -26,6 +26,7 @@ class CommentModel extends BaseModel {
 			WHERE
 							c.id in ($ids)
 		");
+		parent::setFileUrl($data,array('voice_url','pic_url'));
 		return $data;
 	}
 	

@@ -23,7 +23,7 @@ class ApiBaseAction extends Action {
 		}  else {
 			$this->oApp = D('App')->getApp(getRequest('company'));	
 		}
-		$this->oApp->id = 1;		//公司id
+		//$this->oApp->id = 1;		//公司id
 		
 		
 		if (empty($this->oApp)) {

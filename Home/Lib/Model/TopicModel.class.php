@@ -30,6 +30,8 @@ class TopicModel extends BaseModel {
 				AND
 							status = '0'	
 		");
+		//重新组合地址
+		parent::setFileUrl($data,array('voice_url','pic_url'));
 		return $data;
 	}
 	
