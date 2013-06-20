@@ -61,9 +61,17 @@ class ApiAuthBaseAction extends ApiBaseAction {
 		}else{// 上传成功 获取上传文件信息
 			return $execute;
 		}
-		
-	
 	}
+	
+	
+	protected  function fixData($M, &$list, $field, $fields = '*', $pk='id') {
+		$aIds = getArrayByField($list, $field);
+		$aData = $M->getDataById(implode(',',$aIds),$pk , $fields);
+		foreach ($list AS $key=> &$val) {
+			$val[$field] = $aData[$val[$field]];
+		}
+	}
+
 
 }
 

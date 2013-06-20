@@ -5,11 +5,40 @@
  */
 class ApiTopicAction extends ApiAuthBaseAction {
 	
+
 	
 	//主题数据列表显示
 	public function index() {
 		
+		$Topic = D('Topic');					//主题表
+		$Papauser = D('Papauser');		//用户表
+		$File = D('File');						//文件表
+		$Comment = D('Comment');		//评论表
+		$app_id = $this->oApp->id;		//公司id
+
+		//获取所有主题数据列表
+		$topicList = $Topic->getAll($app_id);
 		
+		//获取所有当前主题下所有评论数据id
+		$allField =  getArrayByField($topicList,'new_comids');
+		$ids = array();	//保存有的评论id
+		foreach ($allField AS $val) {
+			if (!empty($val)) array_push($ids,$val);
+		}
+		$ids = implode(',',$ids);			//把最新评论的id,组合成字符串
+
+		//获取所有主题评论
+		$allCom = $Comment->all_com($ids);
+		//按照主题id，归类评论
+		$groupCom = setArrayKey($allCom,'tid');
+
+		//把评论添加到主题中
+		foreach ($topicList AS $key=>$val) {
+			$topicList[$key]['comments'] = $groupCom[$val['id']];
+		}
+		
+		print_r($topicList);
+
 	}
 	
 	
