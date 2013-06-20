@@ -51,15 +51,19 @@ class ApiCommentAction extends ApiAuthBaseAction {
 	
 	
 	/**
-	 * 更新主题下最新3条评论
+	 * 更新主题下最新3条评论，并且增加一条评论数
 	 * @param unknown_type $obj
 	 * @param unknown_type $tid
 	 * @param unknown_type $cid
 	 */
 	private function set_com($obj,$tid,$cid) {
 		//获取最新评论数
-		$comids = $obj->where(array('id'=>$tid))->getField('new_comids');
-		if (empty($comids)) {
+		$condition = array(
+			'id'=>$tid,
+			'num'=>array('exp','num+1'),	//评论数加1
+		);
+		$comids = $obj->where($condition)->getField('new_comids');
+		if (empty($comids)) {	//如果没有最新评论，则把评论id追加到字段中
 			$String = $cid;
 		} else {
 			//更新最新3条评论数据
