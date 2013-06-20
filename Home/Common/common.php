@@ -168,7 +168,18 @@ function getRequest($name, $default = '') {
 	}
 }
 
-
+/*
+ * 过滤逗号分割的数字字符串 如 1,2,3
+ */
+function filterNumList($numlist, $separator = ',') {
+	$aNums = explode($separator, $numlist);
+	
+	foreach ($aNums as &$value) {
+		$value = intval($value);
+	}
+	
+	return join($separator, $aNums);
+}
 
 //文件访问地址
 function visitUrl($file_url,$type) {
