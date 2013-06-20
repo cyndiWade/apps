@@ -81,6 +81,29 @@ class ApiLoginAction extends ApiPublicBaseAction {
 		}
 
 	}
+	
+	public function changePwd() {
+		$account = getRequest('account');
+		$password = getRequest('password');
+		$newpassword = getRequest('newpassword');
+		$company = getRequest('company');
+		
+		$oUser = D('User')->getUser($account,$company);	//获取用户信息
+		if(empty($oUser)) {
+			$this->callback(STATUS_ERROR, '帐号不存在或已禁用！');
+		}
+		if($oUser->password != md5($password)) {
+			$this->callback(STATUS_ERROR, '密码错误！');
+		}
+		
+		//更新登录数据
+		$data = array(
+			'password' => md5($newpassword),
+		);
+		D('User')->data($data)->where(array('id' => $oUser->id))->save();
+		
+		$this->callback(STATUS_SUCCESS, '修改成功！');
+	}
 }
 
 ?>

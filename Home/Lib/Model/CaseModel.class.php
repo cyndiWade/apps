@@ -28,11 +28,19 @@ class CaseModel extends BaseModel {
 		return $this->add();
 	}
 	
-	public function getPageList($appid, $page) {
-		$this->where(array(
+	public function getPageList($appid, $page, $style, $type) {
+		$condition = array(
 			'app_id' => $appid,
 			'status' => 0,	
-		));
+		);
+		if ($style > 0) {
+			$condition['style'] = $style;
+		}
+		if ($type > 0) {
+			$condition['type'] = $type;
+		}		
+		
+		$this->where($condition);
 		
 		$this->limit(filterNumList($page));
 		$data = $this->select();
