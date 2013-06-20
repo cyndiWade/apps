@@ -49,6 +49,20 @@ class UserModel extends BaseModel {
 		
 		return $this->getUserByUid($uid);
 	}
+	
+	/*
+	 * 获取专家列表
+	 */
+	public function getExpertList($appid) {
+		$condition = array(
+			'app_id' => $appid,	
+			'type' => array('in', '1,3,4'),	
+			'status' => 0,		
+		);
+		$this->where($condition);
+		
+		return $this->select();
+	}
 }
 
 

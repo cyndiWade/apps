@@ -41,6 +41,7 @@ class ApiBaseAction extends Action {
 			'msg' => $msg,
 			'data' => $data,
 		);
+
 		die(json_encode($ret));
 	}
 	
