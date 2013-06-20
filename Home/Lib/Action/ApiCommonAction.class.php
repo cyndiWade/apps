@@ -3,7 +3,7 @@
 /**
  * 	对外接口-----评论类
  */
-class ApiCommonAction extends ApiAuthBaseAction {
+class ApiCommentAction extends ApiAuthBaseAction {
 	
 	/**
 	 * 回复消息

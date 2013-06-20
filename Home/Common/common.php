@@ -80,11 +80,13 @@ function getArrayByField(&$arr,$field, $key = '') {
  */
 function setArrayKey(&$arr,$k) {
 	$aRet = array();
-	foreach ($arr AS $aVal) {
-		$aRet[$aVal[$k]] = $aVal;
+	foreach ($arr AS $key=>$val) {
+		$aRet[$val[$k]][] = $arr[$key];
 	}
 	return $aRet;
 }
+
+
 
 
 
