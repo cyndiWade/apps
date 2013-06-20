@@ -171,11 +171,25 @@ function getRequest($name, $default = '') {
 }
 
 
+/*
+ * 过滤逗号分割的数字字符串 如 1,2,3
+ */
+function filterNumList($numlist, $separator = ',') {
+	$aNums = explode($separator, $numlist);
+	
+	foreach ($aNums as &$value) {
+		$value = intval($value);
+	}
+	
+	return join($separator, $aNums);
+}
+
+
 //文件访问地址
 function visitUrl($file_url) {
 	$type =  substr($file_url,-3,3);	//获取文件后缀
 
-	$imgType = array('jpg', 'gif', 'png', 'jpeg');
+	$imgType = array('jpg', 'gif', 'png', 'jpeg','pic');
 	$videoType = array('aac','mp3');
 	
 	if (in_array($type,$imgType)) return 'http://'.C('PUBLIC_FILE').C('TMPL_PARSE_STRING.__IMAGES__').$file_url;

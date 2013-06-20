@@ -8,6 +8,7 @@ class ApiAuthBaseAction extends ApiBaseAction {
 	//过滤部分不需要，登录验证的模块.A
 	protected $eliminate = array(
 		'ApiTopic/index',
+		'ApiTopic/detailed',
 		
 	);				
 	

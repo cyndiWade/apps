@@ -10,7 +10,11 @@ class BaseModel extends Model {
 	}
 	
 	
-	//组合url路径
+	/**
+	 * 
+	 * @param Array $data	数组
+	 * @param String $fields 要组合的url地址字段
+	 */
 	protected function setFileUrl (&$data,$fields) {
 		for ($i=0;$i<count($data);$i++) {
 			foreach ($data[$i] AS $key=>$val) {

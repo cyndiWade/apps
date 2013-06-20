@@ -7,23 +7,32 @@ class ApiActiveAction extends ApiPublicBaseAction {
 
 	//首页活动
 	public function index() {
-	
+		$Active = D('Active');
 		$app_id =  $this->oApp->id;		//公司ID
+		$list = $Active->getIndexList($app_id);
 		
-		$Active = M('Active');
-		$list = $Active->field('id,title,pics')->where(array('app_id'=>$app_id,'sort'=>1,'status'=>0))->limit('0,3')->select();
+		$list ? $this->callback(STATUS_SUCCESS, "获取成功！",$list) : $this->callback(STATUS_SUCCESS, "没有数据！");
+	}
 	
-		if ($list) {
-			//重新组合图片格式
-			foreach ($list AS $key=>$val) {
-				dump($val);
-				$list[$key]['pics'] = visitUrl($list[$key]['pics']);
-			}
-			$this->callback(STATUS_SUCCESS, "获取成功！",$list);
-		} else {
-			$this->callback(STATUS_SUCCESS, "没有数据！");
-		}
 	
+	//所有活动列表
+	public function activeList() {
+		$Active = D('Active');
+		$app_id =  $this->oApp->id;				//公司ID
+		$list = $Active->getAllList($app_id);
+		
+		$list ? $this->callback(STATUS_SUCCESS, "获取成功！",$list) : $this->callback(STATUS_SUCCESS, "没有数据！");
+	}
+	
+	
+	//获取详细活动信息
+	public function detailed () {
+		$Active = D('Active');
+		$id = $this->_post('id');
+		//$id = 1;
+		$detailed = $Active->getDetailed($id);
+		
+		$detailed ? $this->callback(STATUS_SUCCESS, "获取成功！",$detailed[0]) : $this->callback(STATUS_SUCCESS, "没有数据！");	
 	}
 	
 }

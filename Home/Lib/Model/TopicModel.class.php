@@ -13,7 +13,7 @@ class TopicModel extends BaseModel {
 	
 	
 	//获取所有主题列表
-	public function getAll ($app_id) {
+	public function getAll ($app_id,$page) {
 		$data = $this->query("
 			SELECT 
 							t.id,
@@ -29,6 +29,8 @@ class TopicModel extends BaseModel {
 							app_id = '$app_id'
 				AND
 							status = '0'	
+			LIMIT
+							$page	
 		");
 		//重新组合地址
 		parent::setFileUrl($data,array('voice_url','pic_url'));
@@ -37,8 +39,8 @@ class TopicModel extends BaseModel {
 	
 	
 	//获取用户详细信息
-	public function one($condition) {
-		return $this->query("
+	public function getOne($id) {
+		$data =  $this->query("
 			SELECT 
 							t.id,
 							t.pid,
@@ -49,9 +51,12 @@ class TopicModel extends BaseModel {
 				FROM 
 						oa_topic  AS t
 			WHERE 
-						id='$condition'	
+						id='$id'	
 				LIMIT  1 					
 		");
+		parent::setFileUrl($data,array('voice_url','pic_url'));
+		return $data;
+		
 	}
 	
 
