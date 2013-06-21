@@ -3,7 +3,7 @@
 /**
  * 	案例列表
  */
-class ApiCaseAction extends ApiPublicBaseAction {
+class ApiCaseAction extends ApiBaseAction {
 
 	public function index() {
 		$data = D('Case')->getPageList($this->oApp->id, getRequest('page'), getRequest('style'), getRequest('type'));

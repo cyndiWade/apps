@@ -3,7 +3,7 @@
 /**
  * 	对外接口-----主页活动模块
  */
-class ApiActiveAction extends ApiPublicBaseAction {
+class ApiActiveAction extends ApiBaseAction {
 
 	//首页活动
 	public function index() {

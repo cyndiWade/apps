@@ -3,7 +3,7 @@
 /**
  * 	专家列表（设计师，项目经理，材料商）
  */
-class ApiExpertAction extends ApiPublicBaseAction {
+class ApiExpertAction extends ApiBaseAction {
 
 	public function index() {
 		$data = D('User')->getExpertList($this->oApp->id);

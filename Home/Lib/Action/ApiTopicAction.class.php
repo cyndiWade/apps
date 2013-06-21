@@ -3,9 +3,11 @@
 /**
  * 	对外接口-----主题模块
  */
-class ApiTopicAction extends ApiAuthBaseAction {
+class ApiTopicAction extends ApiBaseAction {
 	
-
+	protected $aVerify = array(
+			'add',
+	);//需要验证的方法
 	
 	//主题数据列表显示
 	public function index() {		

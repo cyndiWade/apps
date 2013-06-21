@@ -3,7 +3,10 @@
 /**
  * 	对外接口-----评论类
  */
-class ApiCommentAction extends ApiAuthBaseAction {
+class ApiCommentAction extends ApiBaseAction {
+	protected $aVerify = array(
+		'add', 'set_com',
+	);
 	
 	/**
 	 * 回复消息
