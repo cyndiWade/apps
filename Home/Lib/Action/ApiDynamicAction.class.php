@@ -3,8 +3,11 @@
 /**
  * 	动态类
  */
-class ApiDynamicAction extends ApiAuthBaseAction {
-
+class ApiDynamicAction extends ApiBaseAction {
+	protected $aVerify = array(
+		'index', 'read',
+	);
+	
 	/*
 	 * 动态列表
 	 */

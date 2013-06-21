@@ -3,7 +3,7 @@
 /**
  * 	公司介绍
  */
-class ApiCompanyAction extends ApiPublicBaseAction {
+class ApiCompanyAction extends ApiBaseAction {
 
 	public function index() {
 		$data = (array) $this->oApp;

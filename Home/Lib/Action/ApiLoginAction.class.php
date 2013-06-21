@@ -3,7 +3,7 @@
 /**
  * 	登录，注册功能模块类
  */
-class ApiLoginAction extends ApiPublicBaseAction {
+class ApiLoginAction extends ApiBaseAction {
 
 	public function login() {
 		$account = getRequest('account');
