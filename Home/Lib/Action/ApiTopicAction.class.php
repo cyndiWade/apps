@@ -5,9 +5,9 @@
  */
 class ApiTopicAction extends ApiBaseAction {
 	
-	protected $aVerify = array(
+	protected $aVerify = array(//需要验证的方法
 			'add',
-	);//需要验证的方法
+	);
 	
 	//主题数据列表显示
 	public function index() {		
@@ -15,7 +15,8 @@ class ApiTopicAction extends ApiBaseAction {
 		$Comment = D('Comment');		//评论表
 		$app_id = $this->oApp->id;		//公司id
 		$page = filterNumList($this->_post('page'));	
-		$page= '0,10';
+		//$page= '0,10';
+		
 		//获取所有主题数据列表
 		$topicList = $Topic->getAll($app_id,$page);
 		
@@ -36,7 +37,7 @@ class ApiTopicAction extends ApiBaseAction {
 		foreach ($topicList AS $key=>$val) {
 			$topicList[$key]['comments'] = $groupCom[$val['id']];
 		}
-
+	//	dump($topicList);
 
 		$this->callback(STATUS_SUCCESS, '获取成功',$topicList);
 	}
@@ -53,7 +54,7 @@ class ApiTopicAction extends ApiBaseAction {
 			$Topic = D('Topic');							//主题表
 			$File = D('File');								//文件表
 			
-			//手机Post提交数据的数据
+			//Post提交数据的数据
 			$Topic->create();										
 			$Topic->app_id = $this->oApp->id;			//公司id
 			$Topic->user_id = $this->oUser->id;			//用户id
