@@ -69,7 +69,7 @@ class ApiLoginAction extends ApiBaseAction {
 		$oUser = D('User')->addUser($data);
 		if (!empty($oUser)) { //注册成功
 			//生成sessionKey
-			$key = D('Session')->makeKey($oUser);
+			$key = D('Session')->makeKey($oUser, true);
 			
 			$data = array(
 				'SN_KEY' => $key,

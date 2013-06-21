@@ -9,7 +9,9 @@ class ApiProjectAction extends ApiBaseAction {
 		'add',
 	);//需要验证的方法
 	
-	
+	public function index() {
+		$data = D('Project');
+	}
 }
 
 ?>
