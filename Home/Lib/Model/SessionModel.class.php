@@ -12,6 +12,7 @@ class SessionModel extends BaseModel {
 	 */
 	public function check($key) {
 		$data = $this->where(array('key'=>$key))->find();
+
 		//超过2小时过期
 		if (($data['expire'] + 7200) < time()) {
 			return false;

@@ -12,7 +12,7 @@ class ApiDynamicAction extends ApiBaseAction {
 	 * 动态列表
 	 */
 	public function index() {
-		$data = D('Dynamic')->where('uid' => $this->oUser->id, 'status' => 0)->select();
+		$data = D('Dynamic')->where(array('uid' => $this->oUser->id, 'status' => 0))->select();
 		
 		return $this->callback(STATUS_SUCCESS, '获取成功', $data);
 	}
