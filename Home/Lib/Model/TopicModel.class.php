@@ -20,6 +20,7 @@ class TopicModel extends BaseModel {
 							t.pid,
 							t.user_id,
 							t.content,
+							t.num,
 							(SELECT url FROM oa_file  WHERE id=t.voice LIMIT 1) AS voice_url,
 							(SELECT url FROM oa_file  WHERE id=t.pic LIMIT 1) AS pic_url,
 							t.new_comids
@@ -46,6 +47,7 @@ class TopicModel extends BaseModel {
 							t.pid,
 							t.user_id,
 							t.content,
+							t.num,
 							(SELECT url FROM oa_file  WHERE id=t.voice LIMIT 1) AS voice_url,
 							(SELECT url FROM oa_file  WHERE id=t.pic LIMIT 1) AS pic_url
 				FROM 
