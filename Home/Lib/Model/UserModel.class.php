@@ -63,6 +63,20 @@ class UserModel extends BaseModel {
 		
 		return $this->select();
 	}
+	
+	/*
+	 * 获取项目经理列表
+	*/
+	public function getDirectorList($appid) {
+		$condition = array(
+				'app_id' => $appid,
+				'type' => 3,
+				'status' => 0,
+		);
+		$this->where($condition);
+	
+		return $this->select();
+	}
 }
 
 
