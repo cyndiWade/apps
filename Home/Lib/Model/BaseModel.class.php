@@ -25,6 +25,7 @@ class BaseModel extends Model {
 		}
 	}
 	
+<<<<<<< HEAD
 	
 	/**
 	 * 格式化日期
@@ -36,6 +37,20 @@ class BaseModel extends Model {
 		}
 	}
 	
+=======
+	/**
+	 * 按照条件查询所有数据
+	 * @param String $userids  1,2,3	查询条件
+	 * @param String  $k  排序字段规则
+	 * @param String $fields 需要查找的字段
+	 */
+	public function getDataById($userids, $k='id', $fields='*')  {
+		$condition[$k]  = array('in',$userids);
+		$data =  $this->where($condition)->field($fields)->select();
+	
+		return setArrayKey($data, $k);
+	}
+>>>>>>> f11b1de17eff952ba58cd9f90c561b1dbad92170
 	
 }
 ?>
