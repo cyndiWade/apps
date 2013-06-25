@@ -11,7 +11,7 @@ class BaseModel extends Model {
 	
 	
 	/**
-	 * 
+	 * 组合外部访问地址
 	 * @param Array $data	数组
 	 * @param String $fields 要组合的url地址字段
 	 */
@@ -24,6 +24,18 @@ class BaseModel extends Model {
 			}
 		}
 	}
+	
+	
+	/**
+	 * 格式化日期
+	 * @param unknown_type $all
+	 */
+	protected function setTime(&$all) {
+		foreach ($all AS $key=>$val) {
+			$all[$key]['time'] = date('Y-m-d H:i:s',$val['time']);
+		}
+	}
+	
 	
 }
 ?>

@@ -109,14 +109,22 @@
 															<option value="0" selected="selected">管理员</option>
 															<option value="1" >设计师</option>
 															<option value="2">普通用户</option>
+															<option value="3">项目经理</option>
 														<elseif condition="($info:type eq 1)" />
 															<option value="0">管理员</option>
 															<option value="1"  selected="selected">设计师</option>
 															<option value="2">普通用户</option>
-														<else />
+															<option value="3">项目经理</option>
+														<elseif condition="($info:type eq 2)" />
 															<option value="0">管理员</option>
 															<option value="1" >设计师</option>
-															<option value="2" selected="selected">普通用户</option>	
+															<option value="2" selected="selected">普通用户</option>
+															<option value="3">项目经理</option>
+														<elseif condition="($info:type eq 3)" />
+															<option value="0">管理员</option>
+															<option value="1" >设计师</option>
+															<option value="2" >普通用户</option>	
+															<option value="3" selected="selected">项目经理</option>	
 														</if >
 													</select>
 													</div>

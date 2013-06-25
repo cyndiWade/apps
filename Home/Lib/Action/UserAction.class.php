@@ -38,6 +38,10 @@ class UserAction extends BaseAction {
 				$title = '普通用户';
 				$data = $this->_getUserList(2);	//用户数据
 				break;
+			case 'amaldar'	:
+				$title = '项目经理';
+				$data = $this->_getUserList(3);	//用户数据
+				break;
 			case 'all' :
 				$title = '所有用户';
 				$data = $this->_getUserList();	//所有数据

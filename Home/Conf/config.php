@@ -15,6 +15,9 @@ $system = array(
 	//session及时区配置
 	'SESSION_AUTO_START' => true,				//session常开
 	'DEFAULT_TIMEZONE'=>'Asia/Shanghai', 	// 设置默认时区
+	
+	//分页配置
+	'VAR_PAGE'=>'p',	
 			
 	//模板配置
 	//'DEFAULT_THEME' => 'default',
@@ -22,7 +25,6 @@ $system = array(
 	//'TMPL_ACTION_ERROR' => 'public:error',
 
 	/*以下添加扩展配置*/
-	'VAR_PAGE'=>'p',
 	'PREV_URL' => $_SERVER["HTTP_REFERER"],		//上一页地址配置
 
 	//上传文件目录	
