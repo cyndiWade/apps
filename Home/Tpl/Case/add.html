@@ -110,6 +110,43 @@ textarea{
                                             <th><textarea name="info"></textarea></th>
                                           </tr>
 										  <tr>
+                                            <th class="ttl01">设计师：</th>
+                                            <th>
+                                            	<div class="selectwidth">
+                                            		<select name="uid" class="width">
+                                            		{$designersHtml}
+													</select>
+													<!-- 
+	                                            	<select name="uid" class="width">
+	                                            		<volist name="designers" id="vo">
+		                                            		<option value="{$vo.id}">{$vo.nickname}</option>
+														</volist>
+		                                            </select>
+													-->
+												</div>
+											</th>
+                                          </tr>
+										  <tr>
+                                            <th class="ttl01">风格：</th>
+                                            <th>
+                                            	<div class="selectwidth">
+                                            		<select name="style">
+                                            			{$styleHtml}
+                                            		</select>
+												</div>
+                                            </th>
+                                          </tr>
+										  <tr>
+                                            <th class="ttl01">功能：</th>
+                                            <th>
+                                            	<div class="selectwidth">
+                                            		<select name="type">
+                                            			{$typeHtml}
+                                            		</select>
+												</div>
+                                            </th>
+                                          </tr>
+										  <tr>
                                             <th class="ttl01">上传图片：</th>
                                             <th>
                                             	<div id="upload">
@@ -117,20 +154,7 @@ textarea{
 												</div>
 												<div id="add"><span class="icomoon-icon-file-add">&nbsp;&nbsp;继续添加</span></div>
 											</th>
-                                          </tr>
-										  <tr>
-                                            <th class="ttl01">设计师：</th>
-                                            <th>
-                                            	<div class="selectwidth">
-	                                            	<select name="uid">
-	                                            		<volist name="designers" id="vo">
-		                                            		<option value="{$vo.id}">{$vo.nickname}</option>
-														</volist>
-		                                            </select>
-												</div>
-											</th>
-                                          </tr>
-										  		  
+                                          </tr> 		  
                                           <tr>
                                             <td colspan="2">
                                             	<button  class="btn">提交</button>

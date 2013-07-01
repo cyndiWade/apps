@@ -139,17 +139,33 @@ textarea{
                                             <th class="ttl01">设计师：</th>
                                             <th>
                                             	<div class="selectwidth">
-	                                            	<select name="uid">
-														<volist name="designers" id="vo">
-	                                            			<if condition="($caseInfo.uid eq $vo['id'])  ">
-	                                            				<option value="{$vo.id}" selected="selected">{$vo.nickname}</option>
-															<else />
-																<option value="{$vo.id}">{$vo.nickname}</option>
-															</if>
-															</volist>
-		                                           </select>
+	                                            	<select name="uid" class="width">
+                                            		{$designersHtml}
+													</select>
 												</div>
 											</th>
+                                          </tr>
+										  
+										  <tr>
+                                            <th class="ttl01">风格：</th>
+                                            <th>
+                                            	<div class="selectwidth">
+                                            		<select name="style">
+                                            			{$styleHtml}
+                                            		</select>
+												</div>
+                                            </th>
+                                          </tr>
+										  
+										  <tr>
+                                            <th class="ttl01">功能：</th>
+                                            <th>
+                                            	<div class="selectwidth">
+                                            		<select name="type">
+                                            			{$typeHtml}
+                                            		</select>
+												</div>
+                                            </th>
                                           </tr>
 										  
 										  <tr>

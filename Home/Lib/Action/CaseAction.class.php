@@ -6,26 +6,22 @@
  */
 class CaseAction extends BaseAction {
 	
+	//设计师
+	private $designers;
 	
-	/**
-	 * 上传操作图片操作
-	 * @param unknown_type $CasePics
-	 * @param unknown_type $app_id
-	 * @param unknown_type $cid
-	 */
-	private function upImg($CasePics,$app_id,$cid) {
-		$pics = parent::upload();	//执行上传操作
-		//上传文件写入数据库
-		if ($pics) {
-			foreach ($pics AS $key=>$val) {
-				$CasePics->app_id = $app_id;		//公司id
-				$CasePics->cid = $cid;						//案例id
-				$CasePics->url = $val['savename'];		//图片地址
-				$CasePics->add();
-			}
-		}
-	} 
+	//风格
+	private $style = array(
+		array('id'=>'1','content'=>'地中海风格'),
+		array('id'=>'2','content'=>'其他风格')
+	);
 	
+	//功能
+	private $type = array(
+		array('id'=>'1','content'=>'卧室'),
+		array('id'=>'2','content'=>'厨房'),
+		array('id'=>'3','content'=>'卫生间'),
+		array('id'=>'4','content'=>'大厅'),
+	);
 	
 	//案例列表
 	public function show() {
@@ -43,7 +39,6 @@ class CaseAction extends BaseAction {
 	//添加案例
 	public function add() {
 		$Case = D('Case');	//案例表
-		$User = D('User');		//用户表
 		$CasePics = D('CasePics');	//案例图片表
 		$app_id = $this->oUser->app_id;	//公司id
 
@@ -61,10 +56,10 @@ class CaseAction extends BaseAction {
 				exit;
 			}
 		}
-
-		//读取用户数据
-		$designers = $User->getDesigner($app_id);
-		$this->assign('designers',$designers);
+			
+		//生成设计师、风格、功能相的HTML
+		$this->addHtml();
+		
 		$this->display();
 		
 	}
@@ -94,12 +89,15 @@ class CaseAction extends BaseAction {
 		//案例图片
 		$pics = $CasePics->getPic($cid);
 
-		//读取设计师数据
-		$designers = $User->getDesigner($app_id);
-
+		//生成设计师、风格、功能相的HTML
+		$this->addHtml(array(
+			'designers' => $caseInfo['uid'],
+			'style' => $caseInfo['style'],
+			'type' => $caseInfo['type']
+		));
+		
 		$this->assign('caseInfo',$caseInfo);
 		$this->assign('pics',$pics);
-		$this->assign('designers',$designers);
 		$this->display();
 	}
 	
@@ -114,9 +112,58 @@ class CaseAction extends BaseAction {
 	
 	
 	
+/**
+ * 以下是私有方法
+ */
+	
+	/**
+	 * 生成HTML
+	 */
+	private function addHtml($arr=array()) {
+
+		//设计师
+		$this->designers = D('User')->getDesigner($this->oUser->app_id);
+		foreach ($this->designers AS &$val) {
+			$val['id'] == $arr['designers'] ? $selected = 'selected="selected"' : $selected = '';	//加首选
+			$designersHtml .= "<option value={$val['id']} $selected>{$val['nickname']}</option>";
+		}
+		
+		//风格
+		foreach ($this->style AS &$val) {
+			$val['id'] == $arr['style'] ? $selected = 'selected="selected"' : $selected = '';	//加首选
+			$styleHtml .= "<option value={$val['id']} $selected>{$val['content']}</option>";
+		}
+		
+		//功能
+		foreach ($this->type AS &$val) {
+			$val['id'] == $arr['type'] ? $selected = 'selected="selected"' : $selected = '';	//加首选
+			$typeHtml .= "<option value={$val['id']} $selected>{$val['content']}</option>";
+		}
+
+		$this->assign('designersHtml',$designersHtml);
+		$this->assign('styleHtml',$styleHtml);
+		$this->assign('typeHtml',$typeHtml);
+	}
 	
 	
-	
+	/**
+	 * 上传操作图片操作-保存到数据库
+	 * @param Object $CasePics  案例表对象
+	 * @param String	 $app_id		公司ID
+	 * @param String  $cid				项目ID
+	 */
+	private function upImg($CasePics,$app_id,$cid) {
+		$pics = parent::upload();					//执行上传操作->并且返回地址
+		//上传文件写入数据库
+		if ($pics) {
+			foreach ($pics AS $key=>$val) {
+				$CasePics->app_id = $app_id;				//公司id
+				$CasePics->cid = $cid;							//案例id
+				$CasePics->url = $val['savename'];		//图片地址
+				$CasePics->add();
+			}
+		}
+	}
 	
 	
 	
@@ -125,7 +172,7 @@ class CaseAction extends BaseAction {
 	
 	
 	/**
-	 * 测试
+	 * 测试---以下忽视掉。。。。
 	 */
 	
 	public function demo() {
