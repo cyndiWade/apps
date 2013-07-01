@@ -25,7 +25,7 @@ class BaseModel extends Model {
 		}
 	}
 	
-<<<<<<< HEAD
+
 	
 	/**
 	 * 格式化日期
@@ -37,7 +37,7 @@ class BaseModel extends Model {
 		}
 	}
 	
-=======
+
 	/**
 	 * 按照条件查询所有数据
 	 * @param String $userids  1,2,3	查询条件
@@ -50,7 +50,7 @@ class BaseModel extends Model {
 	
 		return setArrayKey($data, $k);
 	}
->>>>>>> f11b1de17eff952ba58cd9f90c561b1dbad92170
+
 	
 }
 ?>
