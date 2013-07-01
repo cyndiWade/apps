@@ -71,7 +71,7 @@ class PublicAction extends Action {
         $_SESSION['app'] =  $oApp;
         $_SESSION['user'] = $oUser;
         
-		$this->success('登录成功！',"?s=/Index/index");
+		$this->success('登录成功！',"?s=/App/index");
 
 	}
 
