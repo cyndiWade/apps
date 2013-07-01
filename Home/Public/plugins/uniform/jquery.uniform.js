@@ -29,7 +29,7 @@ Enjoy!
       fileClass: 'uploader',
       filenameClass: 'filename',
       fileBtnClass: 'action',
-      fileDefaultText: 'No file selected',
+      fileDefaultText: '请选择文件',
       fileBtnText: 'Choose File',
       checkedClass: 'checked',
       focusClass: 'focus',
