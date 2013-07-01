@@ -93,10 +93,9 @@ class CaseAction extends BaseAction {
 		
 		//案例图片
 		$pics = $CasePics->getPic($cid);
-		
+
 		//读取设计师数据
 		$designers = $User->getDesigner($app_id);
-
 
 		$this->assign('caseInfo',$caseInfo);
 		$this->assign('pics',$pics);

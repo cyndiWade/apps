@@ -62,6 +62,7 @@ class BaseAction extends Action {
 		$upload->saveRule =  'uniqid';										// 上传文件的保存规则，必须是一个无需任何参数的函数名
 			
 		if(!$upload->upload()) {// 上传错误提示错误信息
+			return false;
 			$this->error($upload->getErrorMsg());
 		}else{// 上传成功 获取上传文件信息
 			$info =  $upload->getUploadFileInfo();

@@ -21,7 +21,7 @@ textarea{
 	width:290px;
 }
 #upload div input {
-	border:1px solid black;
+	border:1px solid #fff;
 	width:222px;
 	height:25px;
 }
@@ -39,9 +39,9 @@ textarea{
 	width:222px;
 }
 .info {
-	max-width:348px;
-	min-width:348px;
-	width:348px;
+	max-width:495px;
+	min-width:495px;
+	width:495px;
 	height:80px;
 	overflow:auto;
 }
@@ -51,6 +51,17 @@ textarea{
 	border:none;
 	margin:0 10px 10px 0;
 	cursor:pointer;
+}
+#itemContainer{
+	width:1283px ! important;
+}
+#itemContainer li{
+	width:230px  !important;
+	float:left;
+}
+#itemContainer li a img {
+	width:200px  !important;
+	height:200px  !important;
 }
 </style>   
 
@@ -123,28 +134,7 @@ textarea{
                                             <th class="ttl01">案例说明：</th>
                                             <th><textarea name="info">{$caseInfo.info}</textarea></th>
                                           </tr>
-										  <tr>
-                                            <th class="ttl01">上传图片：</th>
-                                            <th>
-                                            	<div id="upload">
-                                            		<div><input type="file" class="nostyle" name="pics[]" /><span class="icomoon-icon-cancel-3 remove"></span></div>
-												</div>
-												<div id="add"><span class="icomoon-icon-file-add">&nbsp;&nbsp;继续添加</span></div>
-											</th>
-                                          </tr>
-										  <tr>
-                                            <th class="ttl01">已上传图片：</th>
-                                            <th>
-                                            	<div id="pics">
-                                            		<!-- 图片数据 -->
-                                            		<volist name="pics" id="pic">
-                                            		<img src="{$Think.config.TMPL_PARSE_STRING.__IMAGES__}{$pic.url}" data-img="{$pic.id}" />
-													</volist>
-											
-												</div>
-												
-											</th>
-                                          </tr>
+										  
 										  <tr>
                                             <th class="ttl01">设计师：</th>
                                             <th>
@@ -161,11 +151,63 @@ textarea{
 												</div>
 											</th>
                                           </tr>
-										  		  
-                                          <tr>
-                                            <td colspan="2">
-                                            	<button  class="btn">提交</button>
-												</td>
+										  
+										  <tr>
+                                            <th class="ttl01">上传图片：</th>
+                                            <th>
+                                            	<div id="upload">
+                                            		<div><input type="file" class="nostyle" name="pics[]" /><span class="icomoon-icon-cancel-3 remove"></span></div>
+												</div>
+												<div id="add"><span class="icomoon-icon-file-add">&nbsp;&nbsp;继续添加</span></div>
+											</th>
+                                          </tr>
+										  
+										  <!-- 
+										  <tr>
+                                            <th class="ttl01">已上传图片：</th>
+                                            <th>
+                                            	<div id="pics">
+                            
+                                            		<volist name="pics" id="pic">
+                                            		<img src="{$Think.config.TMPL_PARSE_STRING.__IMAGES__}{$pic.url}" data-img="{$pic.id}" />
+													</volist>
+											
+												</div>
+											</th>
+                                          </tr>
+										 -->
+										 
+										<tr>
+											<th class="ttl01">已上传图片</th>
+											<th> 
+											
+											<div class="span6">
+					                            <ul id="itemContainer" class="galleryView center">
+					                            	<volist name="pics" id="pic">
+					                                 <li>
+					                                    <a href="{$Think.config.TMPL_PARSE_STRING.__IMAGES__}{$pic.url}" rel="prettyPhoto" title="{$pic.info}">
+					                                        <img src="{$Think.config.TMPL_PARSE_STRING.__IMAGES__}{$pic.url}" data-original="{$Think.config.TMPL_PARSE_STRING.__IMAGES__}{$pic.url}" alt="Image">
+					                                    </a>
+					                                    <div class="actionBtn">
+					                                        <a href="#" class="edit" data-img="{$pic.id}"><span class="icon16 icomoon-icon-pencil-2 white"></span></a>
+					                                        <a href="#" class="delete" data-img="{$pic.id}"><span class="icon16 icomoon-icon-cancel-4 white"></span></a>
+					                                    </div>
+					                                </li>
+													</volist>
+					                            </ul>
+
+					                             <div class="center">
+					                                <div class="holder"></div>
+					                             </div>
+					
+					                        </div>
+											</th>
+										</tr>	
+	
+                                        <tr>
+                                           <td colspan="2">
+                                            	<button  class="btn" type="submit">提交</button>
+											</td>
                                           </tr>
                                         </tbody>
                                     </table>
@@ -248,7 +290,7 @@ textarea{
 	
 $(function () {
 
-	//增加与减少修上传按钮
+	//一、增加与减少修上传按钮
 	(function (){
 		
 		//获取操作对象
@@ -265,14 +307,14 @@ $(function () {
 			_this.parent().remove();
 		});
 		
-		//编辑图片说明
-		(function () {
-			
+		
+		//二、图片编辑
+		(function () {	
 			//ajax请求数据	
 			function ajaxData (mid,info,type) {
 				var data;
 				$.ajaxSetup({
-					async: false,//async:false 同步请求  true为异步请求
+					async: false		//async:false 同步请求  true为异步请求
 				});
 				//ajax 请求数据
 				$.post('?s=/CasePics/edit/',{
@@ -285,12 +327,13 @@ $(function () {
 				return data;
 			}
 			
-			var oDiv = $('#pics');				//图片div容器
-			var arrImg = oDiv.find('img');	//所有图片对象
-			var oText = $('.info');				//对话框textarea 
+			var oDiv = $('#itemContainer');				//图片div容器
+			var edit = oDiv.find('a.edit');					//编辑对象
+			var oText = $('.info');								//对话框textarea 
+			var arrDel = $('a.delete');						//删除 
 
-			//图片编辑
-			arrImg.click(function () {
+			//图片说明编辑
+			edit.click(function () {
 				var _this = $(this);
 				var mid = _this.data('img');
 				
@@ -300,17 +343,25 @@ $(function () {
 				$('.Popup').dialog({
 					modal : true,
 					buttons:{
-						'提交':function (event) {		
+						"提交" : function (event) {		
 							ajaxData(mid,oText.val(),'save');			//添加评论
 							$(this).dialog('close');
 						},
-						'关闭':function (event) {
+						"关闭" : function (event) {
 							$(this).dialog('close');
 						}
-					},
-				});
-					
+					}
+				});	
 			});
+			
+			//图片删除
+			arrDel.click(function () {
+				var _this = $(this);
+				var mid = _this.data('img');		
+				var state = ajaxData(mid,'','del');			//删除图片
+		
+			});
+			
 		})();
 	})();
 

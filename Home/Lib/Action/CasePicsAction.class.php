@@ -1,6 +1,6 @@
 <?php
 
-//项目图片控制器
+//案例图片控制器
 class CasePicsAction extends Action {
 	
 	

@@ -1190,7 +1190,7 @@ $(document).ready(function() {
 		    $("div.holder").jPages("destroy").jPages({
 		        containerID : "itemContainer",
 		        animation   : "fadeInUp",
-		        perPage		: 16,
+		        perPage		: 10,
 		        scrollBrowse   : true, //use scroll to change pages
 		        keyBrowse   : true,
 		        callback    : function( pages ,items ){
@@ -1222,7 +1222,7 @@ $(document).ready(function() {
 	    $("div.holder").jPages({
 	        containerID : "itemContainer",
 	        animation   : "fadeInUp",
-	        perPage		: 16,
+	        perPage		: 10,
 	        scrollBrowse   : true, //use scroll to change pages
 	        keyBrowse   : true,
 	        callback    : function( pages ,items ){
