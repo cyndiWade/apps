@@ -104,7 +104,7 @@ class ApiTopicAction extends ApiBaseAction {
 		$Comment = D('Comment');		//评论表
 		$tid = $this->_post('tid');			//当前主题id
 		$page = filterNumList($this->_post('page'));	//获取数据条数
-// 		$tid= 2;
+// 		$tid= 2;a
 // 		$page = '0,10';
 		
 		//获取当前主题数据
