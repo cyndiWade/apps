@@ -2,17 +2,14 @@
 
 
 /**
-<<<<<<< HEAD
  * 项目表
-=======
- * 项目模型
->>>>>>> f11b1de17eff952ba58cd9f90c561b1dbad92170
+
+
  *
  */
 class ProjectModel extends BaseModel {
 	
-<<<<<<< HEAD
-	
+
 	//获取项目列表
 	public function getProList ($firstRow,$listRows) {
 		$data =  $this->where(array('status'=>0))->limit($firstRow.','.$listRows)->select();
@@ -27,7 +24,7 @@ class ProjectModel extends BaseModel {
 	}
 	
 	
-=======
+
 	public function getList($appid) {
 		return $this->where(array('app_id'=>$appid))->select();
 	}
@@ -36,7 +33,7 @@ class ProjectModel extends BaseModel {
 		return $this->where(array('app_id'=>$appid, 'touid' => $uid))->select();
 	}
 	
->>>>>>> f11b1de17eff952ba58cd9f90c561b1dbad92170
+
 }
 
 
