@@ -102,7 +102,7 @@ class ApiTopicAction extends ApiBaseAction {
 	public function detailed () {
 		$Topic = D('Topic');					//主题表
 		$Comment = D('Comment');		//评论表
-		$tid = $this->_post('pid');			//当前主题id
+		$tid = $this->_post('tid');			//当前主题id
 		$page = filterNumList($this->_post('page'));	//获取数据条数
 // 		$tid= 2;
 // 		$page = '0,10';
