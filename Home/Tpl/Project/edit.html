@@ -117,7 +117,12 @@ textarea{
                                         <tbody>
                                           <tr>
                                             <th class="ttl01">项目名称：</th>
-                                            <th><input type="textbox" name="name" value="{$detailed.name}" /></th>
+                                            <th>{$detailed.name}</th>
+                                          </tr>
+										  
+										  <tr>
+                                            <th class="ttl01">发起人：</th>
+                                            <th>{$detailed.uname}</th>
                                           </tr>
 										  
                                           <tr>
@@ -152,16 +157,9 @@ textarea{
 												<input type="textbox" name="number" value="{$detailed.number}" />号
 											</th>
                                           </tr>
-										  
-										   <tr>
-                                            <th class="ttl01">设计师：</th>
-                                            <th>
-                                            	<input type="textbox" name="touid" value="{$detailed.touid}" />
-											</th>
-                                          </tr>
-			
+
 										  <tr>
-                                            <th class="ttl01">设计师：</th>
+                                            <th class="ttl01">指定项目经理：</th>
                                             <th>
                                             	<div class="selectwidth">
 	                                            	<select name="touid">

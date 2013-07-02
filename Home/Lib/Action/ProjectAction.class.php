@@ -42,11 +42,35 @@ class ProjectAction extends BaseAction {
 		if ($this->isPOST()) {
 			$Project->create();
 			$Project->where(array('id'=>$id))->save() ? $this->success('更新成功') : $this->error('没有数据被修改');
+			exit;
 		}
 		
 		//获取当前项目信息
-		$detailed = $Project->where(array('id'=>$id,'app_id'=>$app_id))->find();	
-		
+	//	$detailed = $Project->where(array('id'=>$id,'app_id'=>$app_id))->find();
+
+		$detailed = $Project->query("
+				SELECT
+							name,
+							(SELECT account FROM oa_users  WHERE id=uid LIMIT 1) AS uname,
+							province,
+							city,
+							region,
+							area,
+							style,
+							budget,
+							community,
+							road,
+							number,
+							touid,
+							time
+				FROM
+							oa_project
+				WHERE
+							id = '$id'
+					AND
+							app_id = '$app_id'	
+				");
+		$detailed = $detailed[0];
 		if (empty($detailed)) $this->error('对不起，此项目不存在');
 		
 		//读取项目经理数据列表
@@ -59,13 +83,12 @@ class ProjectAction extends BaseAction {
 	}
 	
 	
+	
 	//删除项目
-	public function del() {
-		
+	public function del() {	
 		$Project = D('Project');		//项目表
 		$id = $this->_get('id');		//项目id
 		$Project->del(array('id'=>$id,'app_id'=>$this->oApp->id)) ? $this->success('删除成功') : $this->error('删除失败');
-		
 		
 	}
 	
