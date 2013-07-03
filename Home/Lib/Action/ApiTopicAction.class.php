@@ -68,19 +68,19 @@ class ApiTopicAction extends ApiBaseAction {
 			//1、上传图片文件
 			if (!empty($picFile['name'])) {
 				$PicInfo = parent::ApiUpload($picFile,'pic');		
-				$File->type = 1;																//图片类型
-				$File->size = $PicInfo[0]['size'];								//文件大小
+				$File->type = 1;														//图片类型
+				$File->size = $PicInfo[0]['size'];									//文件大小
 				$File->url = $PicInfo[0]['savename'];							//文件路径
-				$pid = $File->add();															//保存到数据库 
+				$pid = $File->add();													//保存到数据库 
 				if ($pid) $Topic->pic = $pid;												
 			}
 			//2、上传音频文件
 			if (!empty($voiceFile['name'])) {
 				$voiceInfo = parent::ApiUpload($voiceFile,'voice');	
-				$File->type = 2;																//音频类型
+				$File->type = 2;														//音频类型
 				$File->size = $voiceInfo[0]['size'];								//文件大小
 				$File->url = $voiceInfo[0]['savename'];						//文件路径
-				$vid = $File->add();															//保存到数据库 
+				$vid = $File->add();													//保存到数据库 
 				if ($vid) $Topic->voice = $vid;
 			}
 			
