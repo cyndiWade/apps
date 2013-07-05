@@ -3,7 +3,17 @@
 
 class BaseModel extends Model {
 	
+// 	private static $oCache = null;
+	
+// 	public static function getCacheInstance() {
+// 		if (self::$oCache === null) {
+// 			self::$oCache = new Memcache;
+// 			self::$oCache->addServer('127.0.0.1', 11211);
+// 		}
 
+// 		return self::$oCache;
+// 	}
+	
 	//删除方法
 	public function del($condition) {
 		return $this->where($condition)->data(array('status'=>-2))->save();
