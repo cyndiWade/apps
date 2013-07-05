@@ -87,7 +87,48 @@
                                             </div>
                                         </div>
 										
+										<div class="form-row row-fluid">
+                                            <div class="span12">
+                                                <div class="row-fluid">
+                                                    <label class="form-label span4" for="normal">门店信息</label>
+                                                    <table>
+                                                    	<tr><td>门店名称</td><td>门店地址</td><td>服务区域</td><td>服务电话</td><td>营业时间</td><td>操作</td></tr>
+                                                    	<volist name="subcompanys" id="vo">
+														<tr>
+                                                    		<td>{$vo.name}</td>
+															<td>{$vo.address}</td>
+															<td>{$vo.region}</td>
+															<td>{$vo.phone}</td>
+															<td>{$vo.opentime}</td>
+															<td>
+																<a href="?s=/App/edit/id/{$vo.id}" title="编辑" class="tip"><span class="icon12 icomoon-icon-pencil"></span></a> &nbsp;
+																<a href="?s=/App/del/id/{$vo.id}" title="删除" class="tip" onclick="return confirm('确定要删除吗？') ? true : false"><span class="icon12 icomoon-icon-remove"></span></a>
+															</td>
+                                                    	</tr>
+														</volist>
+													</table>
+                                                </div>
+                                            </div>
+                                        </div>
 
+										
+										<div class="form-row row-fluid">
+                                            <div class="span12">
+                                                <div class="row-fluid">
+                                                    <label class="form-label span4" for="normal">联系人</label>
+                                                    <input class="span8 text" id="normalInput" type="text" name="contact" value="{$data.contact}" style="width:120px;">
+                                                </div>
+                                            </div>
+                                        </div>
+										<div class="form-row row-fluid">
+                                            <div class="span12">
+                                                <div class="row-fluid">
+                                                    <label class="form-label span4" for="normal">联系电话</label>
+                                                    <input class="span8 text" id="normalInput" type="text" name="phone" value="{$data.phone}" style="width:120px;">
+                                                </div>
+                                            </div>
+                                        </div>
+										
 										<div class="form-actions">
                                            <button type="submit" class="btn btn-info">保 存</button>
                                         </div>
