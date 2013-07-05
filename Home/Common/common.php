@@ -215,4 +215,37 @@ function InsertValArray($data,$num,&$array) {
 
 
 
+/**
+ * 把数组转换为json格式
+ * @param $array  数组
+ * json_encode($array)		//转换数组为JSON格式
+ * json_decode($json);		//转换JSON为数组
+ */
+function JSON($array) {
+	arrayRecursive($array, 'urlencode', true);
+	$json = json_encode($array);		//转换数组为json格式
+	return urldecode($json);
+}
+function arrayRecursive(&$array, $function, $apply_to_keys_also = false) {
+	static $recursive_counter = 0;
+	if (++$recursive_counter > 1000) {
+		die('possible deep recursion attack');
+	}
+	foreach ($array as $key => $value) {
+		if (is_array($value)) {
+			arrayRecursive($array[$key], $function, $apply_to_keys_also);
+		} else {
+			$array[$key] = $function($value);
+		}
+		if ($apply_to_keys_also && is_string($key)) {
+			$new_key = $function($key);
+			if ($new_key != $key) {
+				$array[$new_key] = $array[$key];
+				unset($array[$key]);
+			}
+		}
+	}
+	$recursive_counter--;
+}
+
 ?>

@@ -207,8 +207,18 @@ textarea{
         </div><!-- End #content -->
     
     </div><!-- End #wrapper -->
+	
+	
+	
 
 <include file="Footer:bottom" />
+
+
+<!-- 弹出层 -->
+	<div class="Popup" title="图片说明" style="display:none;">
+	     <textarea class="nostyle info"></textarea>
+    </div>
+	
 
 <script type="text/javascript">
 $(function () {
@@ -231,6 +241,22 @@ $(function () {
 		});
 		
 	})();
+
+		
+
+		$('.Popup').dialog({
+			modal : true,
+			buttons:{
+						"提交" : function (event) {		
+							ajaxData(mid,oText.val(),'save');			//添加评论
+							$(this).dialog('close');
+						},
+						"关闭" : function (event) {
+							$(this).dialog('close');
+						}
+					}
+		});	
+
 
 });	
 </script>

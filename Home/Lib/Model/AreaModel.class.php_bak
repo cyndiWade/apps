@@ -1,0 +1,21 @@
+<?php 
+
+
+/**
+ * 地区表模型
+ *
+ */
+class AreaModel extends BaseModel {
+	
+	
+	//通过fid取得相应的读取数据
+	public function get_fid_area ($fid) {
+		return $this->field('id,name')->where(array('fid'=>$fid))->select();
+	}
+	
+	
+}
+
+
+
+?>
