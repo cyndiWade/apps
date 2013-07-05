@@ -7,6 +7,24 @@
  */
 class UserModel extends BaseModel {
 	protected  $trueTableName = 'oa_users';
+	public $moCache;
+	
+	function __construct() {
+		parent::__construct();
+		$this->moCache = BaseModel::getCacheInstance();
+		//$this->moCache->delete('Users_Init');
+	//echo	$this->moCache->add('Users_Init', 1);
+	//echo $this->moCache->get('Users_Init');
+		if ($this->moCache->add('Users_Init', 1)) {
+			$this->moCache->add('Users', $this->select());
+		}
+	}
+	
+	
+	public function getUserById($uid) {
+	return $this->moCache->get('Users');
+		//return $this->moCache->get('Users');
+	}
 	
 	public function getUser($account,$company) {
 		if (empty($account) || empty($company)) return null;
