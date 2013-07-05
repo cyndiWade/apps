@@ -10,6 +10,8 @@ class AppAction extends BaseAction {
 			$data = array(
 					'name' =>$_POST['name'],
 					'info' =>$_POST['info'],
+					'phone' => $_POST['phone'],
+					'contact' => $_POST['contact'],
 			);
 
 			if (!empty($_FILES['logo']['name'])) {
@@ -25,6 +27,9 @@ class AppAction extends BaseAction {
 			$this->success('保存成功！');
 		} else {
 			$this->assign('data', (array) $this->oApp);
+			$subcompanys = D('Subcompanys')->where(array('appid' => $this->oApp->id))->select();
+			$this->assign('subcompanys', $subcompanys);
+			
 			$this->display();
 		}
 	}
