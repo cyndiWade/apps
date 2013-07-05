@@ -40,12 +40,15 @@ class CommentModel extends BaseModel {
 						c.id,
 						c.tid,
 						c.content,
+						c.time,
 						(SELECT url FROM oa_file  WHERE id=c.voice LIMIT 1) AS voice_url,
 						(SELECT avatar FROM oa_users  WHERE id=c.uid LIMIT 1) AS pic_url
 			FROM
 						oa_comment  AS c
 		WHERE
 						c.tid = '$id'
+	ORDER BY  
+						c.id DESC	
 			LIMIT
 						$page	
 						
