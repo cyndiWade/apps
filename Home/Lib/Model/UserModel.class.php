@@ -9,6 +9,7 @@ class UserModel extends BaseModel {
 	protected  $trueTableName = 'oa_users';
 	public $moCache;
 	
+	/*
 	function __construct() {
 		parent::__construct();
 		$this->moCache = BaseModel::getCacheInstance();
@@ -24,7 +25,7 @@ class UserModel extends BaseModel {
 	public function getUserById($uid) {
 	return $this->moCache->get('Users');
 		//return $this->moCache->get('Users');
-	}
+	}*/
 	
 	public function getUser($account,$company) {
 		if (empty($account) || empty($company)) return null;

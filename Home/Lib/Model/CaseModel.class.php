@@ -42,7 +42,7 @@ class CaseModel extends BaseModel {
 		
 		$this->where($condition);
 		
-		$this->limit(filterNumList($page));
+		//$this->limit(filterNumList($page));
 		$data = $this->select();
 
 		return $data;

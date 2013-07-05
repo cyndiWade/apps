@@ -46,6 +46,7 @@ class ApiBaseAction extends Action {
 			'status' => $status,
 			'msg' => $msg,
 			'data' => $data,
+			'num' => count($data),
 		);
 
 		die(json_encode($ret));
