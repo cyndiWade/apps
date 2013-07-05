@@ -62,4 +62,19 @@ class AreaModel extends Model{
 		
 		return $aRegion['name'] . ' ' . $aArea['name'];
 	}
+	
+	
+	
+	
+	
+	
+	public function getStrArea ($ids) {
+		$data = $this->field('name')->where(array('id'=>array('in',$ids)))->select();
+		foreach ($data AS $val) {
+			$str .= $val['name'].',';
+		}
+		return $str;
+	}
+	
+	
 }

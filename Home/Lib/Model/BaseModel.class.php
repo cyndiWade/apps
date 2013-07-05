@@ -15,11 +15,13 @@ class BaseModel extends Model {
 		return self::$oCache;
 	}
 	
+	
+	**/
+	
 	//删除方法
 	public function del($condition) {
 		return $this->where($condition)->data(array('status'=>-2))->save();
 	}
-	**/
 	
 	/**
 	 * 组合外部访问地址
