@@ -30,7 +30,7 @@ class AppAction extends BaseAction {
 			$this->success('保存成功！');
 		} else {
 			$this->assign('data', (array) $this->oApp);
-			$subcompanys = D('Subcompanys')->where(array('appid' => $this->oApp->id,'status'=>0))->select();
+			$subcompanys = D('Subcompanys')->where(array('appid' => $this->oApp->id,'status'=>0))->order('id ASC')->select();
 			
 			foreach ($subcompanys AS $key=>$val) {
 				$subcompanys[$key]['address'] = $Area->getStrArea($val['area']).$val['address'];

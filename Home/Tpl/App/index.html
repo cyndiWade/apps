@@ -181,7 +181,7 @@
 <!-- 对话框 -->
 <div class="Popup" title="门店信息" style="display:none;">
 	<form method="post"  action="?s=/App/edit" id="subcompanys">
-		<input type="hidden" name="id" />
+		<input type="hidden" class="no_validation" name="id" />
 	  <ul class="subcompanys">
 	  	<li>门店名称：<span class="needStart">&nbsp;*&nbsp;</span><span><input type="text" name="name" /></span></li>
 		<li>店铺地址：&nbsp;&nbsp;&nbsp;
@@ -213,9 +213,10 @@ function detailed ($obj) {
 	$('.Popup').dialog({
 		modal : true,
 		buttons:{
-			"提交" : function (event) {		
+			"提交" : function (event) {	
+				if (form_validation($obj) == false)  return false;		//数据验证	
 				$obj.submit();
-				//$(this).dialog('close');
+				$(this).dialog('close');
 			},
 			"关闭" : function (event) {
 				$(this).dialog('close');
@@ -236,6 +237,20 @@ function getServerInfo($url,$condition) {
 	},'text');
 	return data;
 }
+
+function form_validation ($obj) {
+	var status = true;
+	$obj.find('input').not('.no_validation').each(function () {
+		var _this = $(this);
+		if (_this.val() == '') {
+			alert('请填写');
+			_this.focus();
+			status = false;
+			return false;
+		}
+	});
+	return status;
+}
 	
 
 
@@ -250,13 +265,6 @@ $(function () {
 
 	//编辑门店信息
 	(function () {
-		
-		
-//		objAdd.click(function () {
-//		//	alert(getArea());
-//			objSpan.html(getArea());
-//			detailed(objForm);								//执行弹出框
-//		});
 		
 		arrEdit.click(function () {
 			
