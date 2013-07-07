@@ -80,8 +80,7 @@ class AppAction extends BaseAction {
 		}
 		echo JSON($return);
 	}
-	
-	
+
 	
 	//AJAX地区联动
 	public function AjaxArea() {

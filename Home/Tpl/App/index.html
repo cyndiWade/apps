@@ -117,7 +117,7 @@
 														<tr>
                                                     		<td>{$vo.name}</td>
 															<td>{$vo.address}</td>
-															<td>{$vo.region}</td>
+															<td>{$vo.site}</td>
 															<td>{$vo.phone}</td>
 															<td>{$vo.opentime}</td>
 															<td>
@@ -265,9 +265,11 @@ $(function () {
 			var area = _this.data('area');
 			var arrIpt = objForm.find('input');		//表单中的input
 			//获取地址联动菜单
+			var arttArea =  area.split(',');
+
 			var areaSelect = getServerInfo('?s=/App/AjaxArea/',{
-				'region' :area.split(',')[0],
-				'area' : area.split(',')[1]
+				'region' :arttArea[0],
+				'area' : arttArea[1]
 			});
 			//获取当前门店详细信息
 			eval("var data ="+getServerInfo('?s=/App/edit/',{'id' : id}));			//当前门店相关数据	
