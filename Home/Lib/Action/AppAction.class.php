@@ -29,7 +29,7 @@ class AppAction extends BaseAction {
 			$this->assign('data', (array) $this->oApp);
 			$subcompanys = D('Subcompanys')->where(array('appid' => $this->oApp->id))->select();
 			$this->assign('subcompanys', $subcompanys);
-			$this->assign('areaHtml', D('Area')->getHtml());
+			//$this->assign('areaHtml', D('Area')->getHtml());
 			$this->display();
 		}
 		
