@@ -32,6 +32,8 @@ $system = array(
 		'__IMAGES__' => 'data/images/',
 		'__VIDEO__' => 'data/video/',
 	),
+		
+	'OUTPUT_ENCODE' => false,
 
 	//访问文件目录
 	'PUBLIC_FILE' =>$_SERVER['SERVER_NAME'].dirname($_SERVER['SCRIPT_NAME']).'/',
