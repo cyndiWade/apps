@@ -21,10 +21,11 @@ class AreaModel extends Model{
 		$str = "<select class='nostyle selectWidth' onchange='areaSelected(this)' name='region'>\n";
 		$str .= "<option value=0 " . ($region == 0 ? "selected=selected" : "") . ">请选择区域</option>\n";
 		foreach ($aRegion as $aValue) {
-			$str .= "<option value='". $aValue['id'] . ($region == $aValue['id'] ? "selected=selected" : "") ."'>" . $aValue['name'] . "</option>";
+			//$str .= "<option value='". $aValue['id'] . ($region == $aValue['id'] ? "selected=selected" : "") ."'>" . $aValue['name'] . "</option>";
+			$str .= "<option value='{$aValue['id']}' ".($region == $aValue['id'] ? "selected=selected" : "").">" . $aValue['name'] . "</option>";
 		}
 		$str .= "</select>&nbsp;&nbsp;";
-		
+
 		//小区范围select组装
 		$str .= "<select class='nostyle selectWidth' name='area'>".$this->dataToOptions($aRes[$area])."</select><script>\n";
 		$str .= "var areaData = " . json_encode($aRes) . ";\n";
@@ -52,7 +53,7 @@ class AreaModel extends Model{
 		foreach ($aData as $aValue) {
 			$ret .= "<option value='$aValue[1]'>$aValue[0]</option>\n";
 		}
-		
+
 		return $ret;
 	}
 	
@@ -62,4 +63,19 @@ class AreaModel extends Model{
 		
 		return $aRegion['name'] . ' ' . $aArea['name'];
 	}
+	
+	
+	
+	
+	
+	
+	public function getStrArea ($ids) {
+		$data = $this->field('name')->where(array('id'=>array('in',$ids)))->select();
+		foreach ($data AS $val) {
+			$str .= $val['name'].',';
+		}
+		return $str;
+	}
+	
+	
 }

@@ -117,12 +117,12 @@
 														<tr>
                                                     		<td>{$vo.name}</td>
 															<td>{$vo.address}</td>
-															<td>{$vo.region}</td>
+															<td>{$vo.site}</td>
 															<td>{$vo.phone}</td>
 															<td>{$vo.opentime}</td>
 															<td>
-																<a href="javascript:;" title="编辑" class="edit" data-id="{$vo.id}"><span class="icon12 icomoon-icon-pencil"></span></a> &nbsp;
-																<a href="javascript:;" title="删除" class="del" data-id="{$vo.id}" onclick="return confirm('确定要删除吗？') ? true : false"><span class="icon12 icomoon-icon-remove"></span></a>
+																<a href="javascript:;" title="编辑" class="edit" data-id="{$vo.id}" data-area="{$vo.area}"><span class="icon12 icomoon-icon-pencil"></span></a> &nbsp;
+																<a href="?s=/App/del/id/{$vo.id}" title="删除" class="del" data-id="{$vo.id}"  onclick="return confirm('确定要删除吗？') ? true : false"><span class="icon12 icomoon-icon-remove"></span></a>
 															</td>
                                                     	</tr>
 														</volist>
@@ -135,9 +135,10 @@
                                             <div class="span12">
                                                 <div class="row-fluid">
                                                     <label class="form-label span4" for="normal"></label>
-													<button class="btn" id="add" type="button">
-													<span class="icon16 icomoon-icon-cog"></span>
-													添加
+													
+													<button class="btn edit" id="add" type="button" data-id="0" data-area="0,0">
+														<span class="icon16 icomoon-icon-cog"></span>
+														添加
 													</button>
                                                 </div>
                                             </div>
@@ -177,8 +178,10 @@
                     </div><!-- End .row-fluid -->
 	
 
-
+<!-- 对话框 -->
 <div class="Popup" title="门店信息" style="display:none;">
+	<form method="post"  action="?s=/App/edit" id="subcompanys">
+		<input type="hidden" class="no_validation" name="id" />
 	  <ul class="subcompanys">
 	  	<li>门店名称：<span class="needStart">&nbsp;*&nbsp;</span><span><input type="text" name="name" /></span></li>
 		<li>店铺地址：&nbsp;&nbsp;&nbsp;
@@ -192,73 +195,102 @@
 				
 			</select>
 			-->
-			<p class="p_style"><span class="needStart">*&nbsp;</span><input type="text" name="name" /></p>
+			<p class="p_style"><span class="needStart">*&nbsp;</span><input type="text" name="address" /></p>
 		</li>
-		<li>服务区域：<span class="needStart">&nbsp;*&nbsp;</span><span><input type="text" name="name" /></span></li>
-		<li>服务电话：<span class="needStart">&nbsp;*&nbsp;</span><span><input type="text" name="name" /></span></li>
-		<li>营业时间：<span class="needStart">&nbsp;*&nbsp;</span><span><input type="text" name="name" /></span></li>
+		<li>服务区域：<span class="needStart">&nbsp;*&nbsp;</span><span><input type="text" name="site" /></span></li>
+		<li>服务电话：<span class="needStart">&nbsp;*&nbsp;</span><span><input type="text" name="phone" /></span></li>
+		<li>营业时间：<span class="needStart">&nbsp;*&nbsp;</span><span><input type="text" name="opentime" /></span></li>
 	  </ul>
-	   
+	   </form>
 </div>	          
        
 <include file="Footer:bottom" />
 
 <script type="text/javascript">
 	
-//详情
-		function detailed () {
-			$('.Popup').dialog({
-				modal : true,
-				buttons:{
-					"提交" : function (event) {		
-						//ajaxData(mid,oText.val(),'save');			//添加评论
-						$(this).dialog('close');
-					},
-					"关闭" : function (event) {
-						$(this).dialog('close');
-					}
-				}
-			});	
+//弹出框
+function detailed ($obj) {
+	$('.Popup').dialog({
+		modal : true,
+		buttons:{
+			"提交" : function (event) {	
+				if (form_validation($obj) == false)  return false;		//数据验证	
+				$obj.submit();
+				$(this).dialog('close');
+			},
+			"关闭" : function (event) {
+				$(this).dialog('close');
+			}
 		}
+	});	
+}
 
-//获取地区数据
-		function getArea($fid) {
-			var data;
-			$.ajaxSetup({
-				async: false		//async:false 同步请求  true为异步请求
-			});
-			//ajax 请求数据
-			$.get('?s=/App/AjaxArea/',{
-				'fid' : $fid
-			},function (obj) {
-				data = obj;
-			},'html');
-				return data;
+//获取对应数据
+function getServerInfo($url,$condition) {
+	var data;
+	$.ajaxSetup({
+		async: false		//async:false 同步请求  true为异步请求
+	});
+	//ajax 请求数据
+	$.get($url,$condition,function (obj) {
+		data = obj;
+	},'text');
+	return data;
+}
+
+function form_validation ($obj) {
+	var status = true;
+	$obj.find('input').not('.no_validation').each(function () {
+		var _this = $(this);
+		if (_this.val() == '') {
+			alert('请填写');
+			_this.focus();
+			status = false;
+			return false;
 		}
+	});
+	return status;
+}
 	
+
 
 $(function () {
 	
 	//选择操作对象
-	var arrEdit = $('.edit');
-	var arrDel = $('.del');
-	var objSpan = $('#area');
-	var objAdd = $('#add');
+	var arrEdit = $('.edit');		//编辑
+	var arrDel = $('.del');			//删除
+	var objAdd = $('#add');		//添加
+	var objSpan = $('#area');	//保存地区的id
+	var objForm =$('#subcompanys');
 
-	//编辑信息
+	//编辑门店信息
 	(function () {
 		
-		
-		objAdd.click(function () {
-			objSpan.html(getArea());
-			detailed();								//执行弹出框
-		});
-		
 		arrEdit.click(function () {
+			
 			var _this = $(this);
 			var id = _this.data('id');
-			objSpan.html(getArea());
-			detailed();								//执行弹出框
+			var area = _this.data('area');
+			var arrIpt = objForm.find('input');		//表单中的input
+			//获取地址联动菜单
+			var arttArea =  area.split(',');
+
+			var areaSelect = getServerInfo('?s=/App/AjaxArea/',{
+				'region' :arttArea[0],
+				'area' : arttArea[1]
+			});
+			//获取当前门店详细信息
+			eval("var data ="+getServerInfo('?s=/App/edit/',{'id' : id}));			//当前门店相关数据	
+			
+			objSpan.html(areaSelect);	//添加到节点
+			arrIpt.each (function () {
+				var _ipt = $(this);
+				var value  = data.info[_ipt.attr('name')];
+				_ipt.val(value);
+				
+			});
+			
+			detailed(objForm);								//执行弹出框
 		});
 
 	})();
