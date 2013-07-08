@@ -2,27 +2,9 @@
 
 
 class UserAction extends BaseAction {
-	
 
-	/**	 设计师列表 ->>>>>已经统一整理到userList控制器中
-	public function designer() {
-		$M = D('User');
-		$condition = array(
-			'app_id' => $this->oApp->id,
-			'type' => 1,
-			'status' => 0,
-		);
-		$data = $M->where($condition)->select();
-		
-		$this->assign('data', $data);
-		$this->display();
-	}
-	 */
-	
-	
 	//用户列表
 	public function userList() {
-		
 		$type = $this->_get('type');		//数据类型
 	
 		switch ($type) {

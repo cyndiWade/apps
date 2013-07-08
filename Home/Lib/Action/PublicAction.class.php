@@ -22,21 +22,15 @@ class PublicAction extends Action {
 // 		}else{
 // 			//$this->redirect('Content/tables');
 // 		}
-		
 	}
 
 	// 用户登出
-    public function logout()
-    {
-        if(isset($_SESSION[C('USER_AUTH_KEY')])) {
-			unset($_SESSION[C('USER_AUTH_KEY')]);
-			unset($_SESSION);
+    public function logout() {
+    	$APP_ID = $_GET['_URL_'][2];
+	    if (session_start()) {
 			session_destroy();
-            $this->assign("jumpUrl",__URL__.'/login/');
-            $this->success('登出成功！');
-        }else {
-            $this->error('已经登出！');
-        }
+			$this->success('退出成功','?s=/Public/login/company/'.$APP_ID);
+		}
     }
 
 	// 登录检测
