@@ -84,11 +84,6 @@ class AppAction extends BaseAction {
 
 	//AJAX地区联动
 	public function AjaxArea() {
-		//$this->assign('areaHtml', D('Area')->getHtml());
-// 		$Area = D('Area');
-// 		$fid = $this->_get('fid');
-// 		$region = $Area->get_fid_area($fid);
-// 		echo JSON($region);
 		$region = $this->_get('region');
 		$area = $this->_get('area');
 		echo D('Area')->getHtml($region,$area);
