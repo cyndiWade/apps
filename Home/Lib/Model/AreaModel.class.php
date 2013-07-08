@@ -25,9 +25,9 @@ class AreaModel extends Model{
 			$str .= "<option value='{$aValue['id']}' ".($region == $aValue['id'] ? "selected=selected" : "").">" . $aValue['name'] . "</option>";
 		}
 		$str .= "</select>&nbsp;&nbsp;";
-
+//dump($aRes[$region]);
 		//小区范围select组装
-		$str .= "<select class='nostyle selectWidth' name='area'>".$this->dataToOptions($aRes[$area])."</select><script>\n";
+		$str .= "<select class='nostyle selectWidth' name='area'>".$this->dataToOptions($aRes[$region],$area)."</select><script>\n";
 		$str .= "var areaData = " . json_encode($aRes) . ";\n";
 
 		//定义js函数
@@ -48,10 +48,11 @@ class AreaModel extends Model{
 		return $str;
 	}
 	
-	private function dataToOptions($aData) {
+	private function dataToOptions($aData,$area) {
 		$ret = '';
 		foreach ($aData as $aValue) {
-			$ret .= "<option value='$aValue[1]'>$aValue[0]</option>\n";
+			$area == $aValue[1] ?  $select = "selected='selected'" : $select = '';
+			$ret .= "<option value='$aValue[1]' $select>$aValue[0]</option>\n";
 		}
 
 		return $ret;
