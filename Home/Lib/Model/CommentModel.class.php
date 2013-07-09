@@ -41,6 +41,7 @@ class CommentModel extends BaseModel {
 						c.tid,
 						c.content,
 						c.time,
+						c.uid,
 						(SELECT url FROM oa_file  WHERE id=c.voice LIMIT 1) AS voice_url,
 						(SELECT avatar FROM oa_users  WHERE id=c.uid LIMIT 1) AS pic_url
 			FROM
