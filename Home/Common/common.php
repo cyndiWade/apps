@@ -3,6 +3,9 @@ define('STATUS_SUCCESS', "0");//获取成功
 define('STATUS_ERROR', "1001");//其他错误
 define('STATUS_NOT_LOGIN', "1002");//未登录
 
+define('URL_DEFAULT_IMAGES', 'http://' . $_SERVER['SERVER_NAME'] . __ROOT__ . '/Home/Public/images/default/');
+
+
 /*	判断是否为post提交
  * @$value  post提交的值
 */
@@ -186,7 +189,11 @@ function filterNumList($numlist, $separator = ',') {
 
 
 //文件访问地址
-function visitUrl($file_url) {
+function visitUrl($file_url, $default='') {
+	if (!$file_url) {
+		return URL_DEFAULT_IMAGES . $default;
+	}
+	
 	$type =  substr($file_url,-3,3);	//获取文件后缀
 
 	$imgType = array('jpg', 'gif', 'png', 'jpeg','pic');

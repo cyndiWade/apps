@@ -22,6 +22,32 @@ class CasePicsModel extends BaseModel {
 		return $this->where(array('id'=>$mid))->getField('info');
 	}
 	
+	protected function _after_select(&$resultSet,$options) {
+		foreach ($resultSet as &$value) {
+			$value['url'] = visitUrl($value['url']);
+		}
+	}
+	
+	public function getPageList($appid, $page, $style, $type) {
+		$condition = array(
+				'app_id' => $appid,
+				'status' => 0,
+		);
+		if ($style > 0) {
+			$condition['style'] = $style;
+		}
+		if ($type > 0) {
+			$condition['type'] = $type;
+		}
+	
+		$this->where($condition);
+	
+		//$this->limit(filterNumList($page));
+		$data = $this->select();
+	
+		return $data;
+	}
+	
 }
 
 

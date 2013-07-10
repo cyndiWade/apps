@@ -6,7 +6,7 @@
 class ApiCaseAction extends ApiBaseAction {
 
 	public function index() {
-		$data = D('Case')->getPageList($this->oApp->id, getRequest('page'), getRequest('style'), getRequest('type'));
+		$data = D('CasePics')->getPageList($this->oApp->id, getRequest('page'), getRequest('style'), getRequest('type'));
 		
 		$this->callback(STATUS_SUCCESS, '获取成功！', $data);
 	}
