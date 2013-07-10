@@ -41,6 +41,7 @@ class BaseAction extends Action {
 			}
 			$this->oApp = $data;
 		}
+		$this->assign('SESSION_APP_ID',$this->oApp->id);
 	}
 	
 	
