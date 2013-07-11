@@ -37,7 +37,7 @@ class BaseAction extends Action {
 		}  else {
 			$data = D('App')->getApp($_GET['company']);	//读取公司信息
 			if (empty($data)) {
-				$this->error('此公司不存在！');
+				$this->error('此公司不存在！', U('/Public/login/company/' . $_GET['company']));
 			}
 			$this->oApp = $data;
 		}

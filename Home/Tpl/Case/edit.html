@@ -201,8 +201,8 @@ textarea{
 					                            <ul id="itemContainer" class="galleryView center">
 					                            	<volist name="pics" id="pic">
 					                                 <li>
-					                                    <a href="{$Think.config.TMPL_PARSE_STRING.__IMAGES__}{$pic.url}" rel="prettyPhoto" title="{$pic.info}">
-					                                        <img src="{$Think.config.TMPL_PARSE_STRING.__IMAGES__}{$pic.url}" data-original="{$Think.config.TMPL_PARSE_STRING.__IMAGES__}{$pic.url}" alt="Image">
+					                                    <a href="{$pic.url}" rel="prettyPhoto" title="{$pic.info}">
+					                                        <img src="{$pic.url}" data-original="{$pic.url}" alt="Image">
 					                                    </a>
 					                                    <div class="actionBtn">
 					                                        <a href="#" class="edit" data-img="{$pic.id}"><span class="icon16 icomoon-icon-pencil-2 white"></span></a>
