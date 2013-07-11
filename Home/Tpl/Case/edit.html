@@ -63,6 +63,9 @@ textarea{
 	width:200px  !important;
 	height:200px  !important;
 }
+#type {
+	margin:10px 0 20px 0;
+}
 </style>   
 
 
@@ -150,19 +153,8 @@ textarea{
                                             <th class="ttl01">风格：</th>
                                             <th>
                                             	<div class="selectwidth">
-                                            		<select name="style">
+                                            		<select name="style" id="style">
                                             			{$styleHtml}
-                                            		</select>
-												</div>
-                                            </th>
-                                          </tr>
-										  
-										  <tr>
-                                            <th class="ttl01">功能：</th>
-                                            <th>
-                                            	<div class="selectwidth">
-                                            		<select name="type">
-                                            			{$typeHtml}
                                             		</select>
 												</div>
                                             </th>
@@ -178,20 +170,6 @@ textarea{
 											</th>
                                           </tr>
 										  
-										  <!-- 
-										  <tr>
-                                            <th class="ttl01">已上传图片：</th>
-                                            <th>
-                                            	<div id="pics">
-                            
-                                            		<volist name="pics" id="pic">
-                                            		<img src="{$Think.config.TMPL_PARSE_STRING.__IMAGES__}{$pic.url}" data-img="{$pic.id}" />
-													</volist>
-											
-												</div>
-											</th>
-                                          </tr>
-										 -->
 										 
 										<tr>
 											<th class="ttl01">已上传图片</th>
@@ -296,6 +274,13 @@ textarea{
 		
 	<!-- 弹出层 -->
 	<div class="Popup" title="图片说明" style="display:none;">
+		
+		 <div id="type">
+			<span >选择房间类型：</span>
+			<select class="nostyle">
+			 	{$roomTypeHtml}
+			</select>
+		 </div>
 	     <textarea class="nostyle info"></textarea>
     </div>	
 <include file="Footer:bottom" />
@@ -327,17 +312,13 @@ $(function () {
 		//二、图片编辑
 		(function () {	
 			//ajax请求数据	
-			function ajaxData (mid,info,type) {
+			function ajaxData (url,data_obj) {	//mid,info,type
 				var data;
 				$.ajaxSetup({
 					async: false		//async:false 同步请求  true为异步请求
 				});
 				//ajax 请求数据
-				$.post('?s=/CasePics/edit/',{
-					'mid' : mid,
-					'info' : info,
-					'type' :type
-				},function (obj) {
+				$.post(url,data_obj,function (obj) {
 					data = obj;
 				},'text');
 				return data;
@@ -347,20 +328,40 @@ $(function () {
 			var edit = oDiv.find('a.edit');					//编辑对象
 			var oText = $('.info');								//对话框textarea 
 			var arrDel = $('a.delete');						//删除 
-
+			var objRoomType = $('#type select');	//房间类型
+			
 			//图片说明编辑
 			edit.click(function () {
 				var _this = $(this);
 				var mid = _this.data('img');
+			
+				//初始化数据
+				eval("var _init_data ="+ ajaxData('?s=/CasePics/edit/',{
+					'mid' : mid,
+					'type' :'select'
+				}));	
 				
-				var com = ajaxData(mid,'','select');					//查找评论
-				oText.val(com);													//显示评论
+				//评论数据
+				oText.val(_init_data.info);
+				//加首选
+				objRoomType.children().each(function () {
+					var _this = $(this);
+					if (_this.val() == _init_data.room_type) {
+						_this.prop("selected", true);
+					}
+				});
 				
 				$('.Popup').dialog({
 					modal : true,
 					buttons:{
-						"提交" : function (event) {		
-							ajaxData(mid,oText.val(),'save');			//添加评论
+						"提交" : function (event) {	
+							//编辑图片说明	
+							ajaxData('?s=/CasePics/edit/',{									
+								'mid' : mid,
+								'info' : oText.val(),
+								'room_type' : objRoomType.val(),
+								'type' :'save'
+							});			
 							$(this).dialog('close');
 						},
 						"关闭" : function (event) {
@@ -373,8 +374,12 @@ $(function () {
 			//图片删除
 			arrDel.click(function () {
 				var _this = $(this);
-				var mid = _this.data('img');		
-				var state = ajaxData(mid,'','del');			//删除图片
+				var mid = _this.data('img');	
+				//删除图片(mid,'','del')	
+				var state = ajaxData('?s=/CasePics/edit/',{
+					'mid' : mid,
+					'type' :'del'
+				});			
 		
 			});
 			

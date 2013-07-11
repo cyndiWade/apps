@@ -10,7 +10,7 @@ $system = array(
 	//路由配置
 	'URL_MODEL'             => 3,							//URL重写，兼容模式  如：home.php?s=/User/user   或者  home.php/User/user
 	'URL_ROUTER_ON'   => true, //开启路由
-	'URL_HTML_SUFFIX' => '.html',	//URL伪静态
+//	'URL_HTML_SUFFIX' => '.html',	//URL伪静态
 	
 	//session及时区配置
 	'SESSION_AUTO_START' => true,				//session常开

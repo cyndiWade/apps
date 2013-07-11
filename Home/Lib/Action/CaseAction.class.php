@@ -11,16 +11,30 @@ class CaseAction extends BaseAction {
 	
 	//风格
 	private $style = array(
-		array('id'=>'1','content'=>'地中海风格'),
-		array('id'=>'2','content'=>'其他风格')
+		array('id'=>'1','content'=>'简约'),
+		array('id'=>'2','content'=>'中式'),
+		array('id'=>'3','content'=>'欧美'),
+		array('id'=>'4','content'=>'地中海'),
+		array('id'=>'5','content'=>'异域'),
+		array('id'=>'6','content'=>'混搭'),		
 	);
 	
-	//功能
-	private $type = array(
-		array('id'=>'1','content'=>'卧室'),
-		array('id'=>'2','content'=>'厨房'),
-		array('id'=>'3','content'=>'卫生间'),
-		array('id'=>'4','content'=>'大厅'),
+	//房间类型
+	private $roomType = array(
+		array('id'=>'1','content'=>'厨房'),
+		array('id'=>'2','content'=>'卫浴'),
+		array('id'=>'3','content'=>'客厅'),
+		array('id'=>'4','content'=>'卧室'),
+		array('id'=>'5','content'=>'餐厅'),
+		array('id'=>'6','content'=>'儿童房'),
+		array('id'=>'7','content'=>'书房'),
+		array('id'=>'8','content'=>'整体衣帽间'),
+		array('id'=>'9','content'=>'玄关'),
+		array('id'=>'10','content'=>'阳台阳光房'),
+		array('id'=>'11','content'=>'楼梯'),
+		array('id'=>'12','content'=>'储藏室'),
+		array('id'=>'13','content'=>'其他空间'),
+		array('id'=>'14','content'=>'户外庭院'),
 	);
 	
 	//案例列表
@@ -75,9 +89,13 @@ class CaseAction extends BaseAction {
 		
 		//更新数据
 		if ($this->isPOST()) {
-			$Case->create();
+			$Case->create();												//获取表单数据
+			$style = $this->_post('style');								//案例风格	
 			$Case->saveCase($cid);									//修改数据
-			$this->upImg($CasePics,$app_id,$cid);			//执行上传操作
+			//执行上传图片
+			$this->upImg($CasePics,$app_id,$cid);			
+			
+			$CasePics->where(array('cid'=>$cid))->data(array('style'=>$style))->save();
 			$this->success('已更新');
 			exit;
 		}
@@ -93,7 +111,6 @@ class CaseAction extends BaseAction {
 		$this->addHtml(array(
 			'designers' => $caseInfo['uid'],
 			'style' => $caseInfo['style'],
-			'type' => $caseInfo['type']
 		));
 		
 		$this->assign('caseInfo',$caseInfo);
@@ -119,7 +136,7 @@ class CaseAction extends BaseAction {
 	/**
 	 * 生成HTML
 	 */
-	private function addHtml($arr=array()) {
+	private function addHtml(Array $arr=array()) {
 
 		//设计师
 		$this->designers = D('User')->getDesigner($this->oUser->app_id);
@@ -135,14 +152,15 @@ class CaseAction extends BaseAction {
 		}
 		
 		//功能
-		foreach ($this->type AS &$val) {
+		$roomTypeHtml .= "<option value='0' >---请选择---</option>";
+		foreach ($this->roomType AS &$val) {
 			$val['id'] == $arr['type'] ? $selected = 'selected="selected"' : $selected = '';	//加首选
-			$typeHtml .= "<option value={$val['id']} $selected>{$val['content']}</option>";
+			$roomTypeHtml .= "<option value={$val['id']} $selected>{$val['content']}</option>";
 		}
 
 		$this->assign('designersHtml',$designersHtml);
 		$this->assign('styleHtml',$styleHtml);
-		$this->assign('typeHtml',$typeHtml);
+		$this->assign('roomTypeHtml',$roomTypeHtml);
 	}
 	
 	

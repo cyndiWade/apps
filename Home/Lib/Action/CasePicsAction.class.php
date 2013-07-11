@@ -12,11 +12,14 @@ class CasePicsAction extends Action {
 			$type = $this->_post('type');	//操作类型
 			$mid = $this->_post('mid');	//操作的图片id
 			$info = $this->_post('info');	//评论内容
+			$room_type = $this->_post('room_type');	//房间类型
+			$style = $this->_post('style');		//案例风格
 			
 			if ($type == 'save') {
-				$return = $CasePics->_save($mid,$info);
+				$return = $CasePics->_save($mid,array('info'=>$info,'room_type'=>$room_type,'style'=>$style));
 			} elseif ($type == 'select') {
 				$return =  $CasePics->getPicInfo($mid);
+				$return = json_encode($return);
 			} elseif ($type == 'del') {
 				$return =  $CasePics->del(array('id'=>$mid));
 			} else {

@@ -13,13 +13,13 @@ class CasePicsModel extends BaseModel {
 	}
 
 	//修改图片信息
-	public function _save($mid,$info) {
-		return $this->where(array('id'=>$mid))->save(array('info'=>$info));
+	public function _save($mid,$data) {
+		return $this->where(array('id'=>$mid))->save($data);
 	}
 	
 	//获取图片评论信息
 	public function getPicInfo($mid) {
-		return $this->where(array('id'=>$mid))->getField('info');
+		return $this->where(array('id'=>$mid))->field('room_type,info')->find();
 	}
 	
 	protected function _after_select(&$resultSet,$options) {
