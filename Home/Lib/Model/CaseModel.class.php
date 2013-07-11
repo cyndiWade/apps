@@ -37,7 +37,7 @@ class CaseModel extends BaseModel {
 			$condition['style'] = $style;
 		}
 		if ($type > 0) {
-			$condition['type'] = $type;
+			$condition['room_type'] = $type;
 		}		
 		
 		$this->where($condition);
