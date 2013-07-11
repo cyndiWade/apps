@@ -66,9 +66,11 @@ class CaseAction extends BaseAction {
 			$cid = $Case->_add();			
 			if ($cid) {	
 				$this->upImg($CasePics,$app_id,$cid);			//执行上传操作
-				$this->success('添加成功！','?s=/Case/show');	
-				exit;
+				$this->success('添加成功！','?s=/Case/edit/cid/'.$cid);	
+			} else {
+				$this->error('添加失败，请重新尝试');
 			}
+			exit;
 		}
 			
 		//生成设计师、风格、功能相的HTML
@@ -91,12 +93,19 @@ class CaseAction extends BaseAction {
 		if ($this->isPOST()) {
 			$Case->create();												//获取表单数据
 			$style = $this->_post('style');								//案例风格	
-			$Case->saveCase($cid);									//修改数据
-			//执行上传图片
-			$this->upImg($CasePics,$app_id,$cid);			
 			
+			//修改案例数据
+			$daStatus = $Case->saveCase($cid);				
+			//执行上传图片
+			$upStatus = $this->upImg($CasePics,$app_id,$cid);			
+			//修改图片的风格
 			$CasePics->where(array('cid'=>$cid))->data(array('style'=>$style))->save();
-			$this->success('已更新');
+			
+			if ($daStatus || $upStatus) {
+				$this->success('已更新','?s=/Case/show');
+			} else {
+				$this->error('没有被更新');
+			}
 			exit;
 		}
 		
@@ -180,6 +189,9 @@ class CaseAction extends BaseAction {
 				$CasePics->url = $val['savename'];		//图片地址
 				$CasePics->add();
 			}
+			return true;
+		} else {
+			return false;
 		}
 	}
 	
