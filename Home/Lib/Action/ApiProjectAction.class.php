@@ -6,14 +6,19 @@
 class ApiProjectAction extends ApiBaseAction {
 
 	protected $aVerify = array(
-		'create', 'director',
+		'create', 'director', 'index',
 	);//需要验证的方法
 	
 	/*
 	 * 项目列表
 	 */
 	public function index() {
-		$data = D('Project')->getList($this->oApp->id);
+		if ($this->oUser->type == 2) {
+			$data = D('Project')->getListCommon($this->oApp->id, $this->oUser->id);
+		} else {
+			$data = D('Project')->getListExpert($this->oApp->id, $this->oUser->id);
+		}
+		
 		
 		$this->callback(STATUS_SUCCESS, '获取成功！', $data);
 	}

@@ -14,7 +14,9 @@ class ApiTopicAction extends ApiBaseAction {
 		$Topic = D('Topic');					//主题表
 		$Comment = D('Comment');		//评论表
 		$app_id = $this->oApp->id;		//公司id
-		$page = filterNumList($this->_post('page'));	
+		$page = $this->_post('page');
+		$page = filterNumList($page);	
+		$page = $page ? $page : '0,10';
 		//$page= '0,10';
 		
 		//获取所有主题数据列表
@@ -37,7 +39,7 @@ class ApiTopicAction extends ApiBaseAction {
 		foreach ($topicList AS $key=>$val) {
 			$topicList[$key]['comments'] = $groupCom[$val['id']];
 		}
-	//	dump($topicList);
+		//dump($topicList);
 
 		$this->callback(STATUS_SUCCESS, '获取成功',$topicList);
 	}

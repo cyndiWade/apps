@@ -60,13 +60,11 @@ class UserModel extends BaseModel {
 		$data = $this->where(array('id'=>$id,'app_id'=>$app_id))->find();
 		return empty($data) ? null : (object) $data;
 	}
-	
-	
-	
 
 	protected function _after_select(&$resultSet,$options) {
 		foreach ($resultSet as &$value) {
 			$value['create_time'] = date('Y-m-d H:i:s', $value['create_time']);
+			$value['avatar'] = visitUrl($value['avatar'], 'avatar.jpg');
 		}
 	}
 	
