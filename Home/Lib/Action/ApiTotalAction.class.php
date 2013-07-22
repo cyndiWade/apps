@@ -10,27 +10,18 @@ class ApiTotalAction extends ApiBaseAction {
 	protected $aVerify = array(//需要验证的方法
 		//	'getNums',
 	);
-	
-// 	public function __construct() {
-// 		parent::__construct();
 		
-// 		$this->_manage();
-// 	}
-	
-	//验证表名
-	private function _manage() {
-		$type = $this->_get('type');
-
-		if (empty($type)) {
-			parent::callback(STATUS_ERROR,'没有指定表');
-		} else {
-			$this->table = D($type);
-		}
-		
+	//一次获取去指定记录条数
+	public function index() {
+		$data = array(
+			'case' => D('Case')->where( array('app_id'=>$this->oApp->id,'status'=>0))->count(),
+			'designer' =>	D('User')->where(array('app_id'=>$this->oApp->id,'type'=>1,'status'=>0))->count(),	
+		);
+		parent::callback(STATUS_SUCCESS,'获取成功',$data);
 	}
-
 	
-	//获取案例数量
+
+	//动态获取
 	public function get_nums () {
 		$type = $this->_get('type');
 
@@ -53,6 +44,7 @@ class ApiTotalAction extends ApiBaseAction {
 		parent::callback(STATUS_SUCCESS,'获取成功',$num);
 	
 	}
+	
 	
 	
 	
