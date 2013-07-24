@@ -38,6 +38,8 @@ class ApiProjectAction extends ApiBaseAction {
 	public function create() {
 		if ($this->isPost()) {
 			$data = $_POST;
+			$data['uid'] = $this->oUser->id;
+			$data['app_id'] = $this->oApp->id;
 			if (D('Project')->add($data)) {
 				$this->callback(STATUS_SUCCESS, '项目创建成功！');
 			} else {
