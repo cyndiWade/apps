@@ -39,7 +39,6 @@ class ApiBaseAction extends Action {
 	
 	/*
 	 * 回调函数
-	 * 
 	 */
 	protected function callback($status = STATUS_SUCCESS, $msg = '获取成功！', $data = array()) {
 		$ret = array(
@@ -128,6 +127,8 @@ class ApiBaseAction extends Action {
 			$this->callback(STATUS_NOT_LOGIN, '未登录！');
 		}
 	}
+	
+	
 }
 
 ?>
