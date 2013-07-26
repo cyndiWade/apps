@@ -36,7 +36,27 @@ class ApiLoginAction extends ApiBaseAction {
 		);
 		$this->callback(STATUS_SUCCESS, '登录成功！', $data);
 	}
-
+	
+	//获取手机验证码
+	public function verify() {
+		$telephone = getRequest('telephone');
+		
+		//检测手机号码格式
+		$this->checkTelephone($telephone);
+		
+		$verify = D('Verify')->getVerify($telephone);
+		$msg = "欢迎注册我们的APP帐号，您的验证码是：" . $verify;
+		$ret = sendMobileMsg($telephone, $msg);
+		
+		$this->callback(STATUS_SUCCESS, '获取成功！');
+	}
+	
+	private function checkTelephone($telephone) {
+		if (!preg_match("/^1[358]\d{9}$/", $telephone)) {
+			$this->callback(STATUS_ERROR, '手机号码格式不正确！');
+		}
+	}
+	
 	public function regist() {
 		$App = D('App');
 		$User = D('User');
@@ -44,11 +64,18 @@ class ApiLoginAction extends ApiBaseAction {
 		$account = getRequest('account');
 		$password = getRequest('password');
 		$company = getRequest('company');		//公司id
+		$verify = getRequest('verify');
 		
 		if(empty($account)) {
 			$this->callback(STATUS_ERROR, '帐号不能为空！');
 		}elseif (empty($password)){
 			$this->callback(STATUS_ERROR, '密码不能为空！');
+		}
+		
+		//检测手机号码格式
+		$this->checkTelephone($account);
+		if (!D('Verify')->check($account, $verify)) {
+			$this->callback(STATUS_ERROR, '验证码不正确或已过期！');
 		}
 		
 		$oUser = $User->getUser($account,$company);	//获取用户信息
